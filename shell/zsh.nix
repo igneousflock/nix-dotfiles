@@ -1,9 +1,15 @@
 { config, pkgs, lib, ... }:
+let
+  completions = builtins.readFile ./completions.zsh;
+  keybindings = builtins.readFile ./keybindings.zsh;
+in
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableVteIntegration = true;
+
+    defaultKeymap = "emacs";
 
     history = {
       append = true;
@@ -17,7 +23,11 @@
     ];
 
     # Loal completion settings
-    initContent = lib.mkOrder 550 (builtins.readFile ./completions.zsh);
+    # initContent = lib.mkOrder 550 completions;
+    initContent = lib.mkMerge [
+      (lib.mkOrder 550 completions)
+      (lib.mkOrder 1000 keybindings)
+    ];
 
     # Plugin manager
     zplug = {
