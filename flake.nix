@@ -8,19 +8,23 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    _1password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      op-shell = inputs._1password-shell-plugins;
     in
     {
       nixosConfigurations = {
         flock = nixpkgs.lib.nixosSystem {
-	  inherit system;
-	  modules = [ ./configuration.nix ];
+          inherit system;
+          modules = [
+            ./configuration.nix
+          ];
         };
       };
       homeConfigurations."igneous" = home-manager.lib.homeManagerConfiguration {
@@ -28,7 +32,10 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [
+          ./home.nix
+          op-shell.hmModules.default
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
