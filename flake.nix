@@ -17,6 +17,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      nixosConfigurations = {
+        flock = nixpkgs.lib.nixosSystem {
+	  inherit system;
+	  modules = [ ./configuration.nix ];
+        };
+      };
       homeConfigurations."igneous" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
