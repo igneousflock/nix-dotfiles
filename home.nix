@@ -26,6 +26,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "1password"
     "1password-cli"
+    "discord"
   ];
 
   home.packages = with pkgs; [
@@ -50,4 +51,6 @@
       '';
     };
   };
+
+  programs.discord.enable = true;
 }
