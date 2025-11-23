@@ -8,11 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{ nixpkgs, home-manager, hyprland, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -25,6 +29,7 @@
           modules = [
             ./configuration.nix
           ];
+          specialArgs = { inherit hyprland; };
         };
       };
       homeConfigurations."igneous" = home-manager.lib.homeManagerConfiguration {

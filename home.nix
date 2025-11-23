@@ -65,4 +65,10 @@
   };
 
   programs.discord.enable = true;
+
+  programs.wofi = {
+    enable = true;
+  };
+
+  programs.waybar.enable = true;
 }

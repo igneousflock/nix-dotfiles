@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config
 , pkgs
+, hyprland
 , ...
 }:
 {
@@ -48,9 +49,20 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable hyprland
+  programs.hyprland = {
+    enable = true;
+    package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
+    withUWSM = true;
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -148,6 +160,7 @@
 
   fonts.packages = with pkgs; [
     iosevka
+    nerd-fonts.iosevka
   ];
   fonts.fontconfig.defaultFonts = {
     monospace = [ "iosevka" ];
