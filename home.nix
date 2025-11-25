@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -25,11 +30,13 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "1password"
-    "1password-cli"
-    "discord"
-  ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "1password"
+      "1password-cli"
+      "discord"
+    ];
 
   home.packages = with pkgs; [
     bat
@@ -38,12 +45,6 @@
   ];
 
   home.file = {
-    nvim = {
-      source = ./nvim;
-      target = ".config/nvim";
-      recursive = true;
-    };
-
     # To facilitate git signature verification
     # SSH fingerprint comes from 1password
     allowedSigners = {
@@ -67,9 +68,14 @@
 
   programs.discord.enable = true;
 
-  programs.wofi = {
+  programs.nixvim = {
     enable = true;
+    imports = [ ./nixvim ];
   };
 
   programs.waybar.enable = true;
+
+  programs.wofi = {
+    enable = true;
+  };
 }
