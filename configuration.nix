@@ -169,7 +169,11 @@
   # Lets zsh completions work
   environment.pathsToLink = [ "/share/zsh" ];
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+    enableGlobalCompInit = false;
+  };
 
   security.polkit.enable = true;
 
