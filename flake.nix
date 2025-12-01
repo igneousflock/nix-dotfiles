@@ -9,6 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +25,7 @@
     inputs@{
       nixpkgs,
       home-manager,
+      hyprcursor-phinger,
       hyprland,
       nixvim,
       ...
@@ -51,6 +53,7 @@
         modules = [
           ./home.nix
           nixvim.homeModules.nixvim
+          hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
           op-shell.hmModules.default
         ];
 

@@ -1,11 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-{
   programs.kitty = {
     enable = true;
     enableGitIntegration = true;
@@ -32,6 +25,9 @@
       inactive_text_alpha = 0.6;
 
       tab_bar_style = "slant";
+
+      background_opacity = 0.9;
+      transparent_background_colors = "#3b3f53@0.9";
     };
     keybindings = {
       "ctrl+up" = "neighboring_window up";

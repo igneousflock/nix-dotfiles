@@ -115,7 +115,7 @@ in
     (mkCmdKeymap {
       desc = "Close the current buffer";
       key = "<F3>";
-      cmd = ":bd";
+      cmd = ":lua MiniBufremove.delete()";
     })
 
     # LSP stuff

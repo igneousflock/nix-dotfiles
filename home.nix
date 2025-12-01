@@ -39,9 +39,14 @@
     ];
 
   home.packages = with pkgs; [
-    bat
+    cargo-expand
+    glibcInfo
+    man-pages
+    man-pages-posix
     nixd
     rustup
+    tree
+    zathura
   ];
 
   home.file = {
@@ -66,7 +71,29 @@
     };
   };
 
+  programs.bat = {
+    enable = true;
+    config.theme = "Catppuccin Frappe";
+  };
+
   programs.discord.enable = true;
+
+  programs.hyprcursor-phinger.enable = true;
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [ "~/Pictures/nomo.jpg" ];
+      wallpaper = [ "HDMI-A-2,~/Pictures/nomo.jpg" ];
+    };
+  };
+
+  # Only applies to XWayland/GTK
+  home.pointerCursor = {
+    name = "phinger-cursors-dark";
+    package = pkgs.phinger-cursors;
+    size = 24;
+    gtk.enable = true;
+  };
 
   programs.nixvim = {
     enable = true;

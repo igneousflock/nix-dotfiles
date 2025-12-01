@@ -1,15 +1,21 @@
 {
   colorschemes.catppuccin = {
     enable = true;
-    # opts = { flavor = "frappe"; };
+    settings = {
+      transparent_background = true;
+    };
   };
 
   colorscheme = "catppuccin-frappe";
 
-  extraConfigLuaPre = ''
-    vim.g.mapleader = ' '
-    vim.g.maplocalleader = ' '
-  '';
+  globals = {
+    mapleader = " ";
+    maplocalleader = " ";
+    netrw_liststyle = 3;
+    netrw_banner = 0;
+    netrw_winsize = 80;
+    netrw_browse_split = 2;
+  };
 
   opts = {
     number = true;
@@ -43,5 +49,10 @@
     inccommand = "split";
 
     confirm = true;
+
+    # Directory listing
+    # netrw_liststyle = 3;
+    # netrw_banner = 0;
+    # netrw_winsize = 25;
   };
 }

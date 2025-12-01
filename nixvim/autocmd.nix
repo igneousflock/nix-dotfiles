@@ -1,8 +1,7 @@
 {
   autoGroups = {
-    kickstart-highlight-yank = {
-      clear = true;
-    };
+    kickstart-highlight-yank.clear = true;
+    VimStartup.clear = true;
   };
 
   autoCmd = [
@@ -13,6 +12,12 @@
       callback = {
         __raw = "function() vim.hl.on_yank() end";
       };
+    }
+    {
+      event = "VimEnter";
+      desc = "Open netrw when opening vim with no files";
+      group = "VimStartup";
+      command = "if expand(\"%\") == \"\" | e . | endif";
     }
   ];
 }

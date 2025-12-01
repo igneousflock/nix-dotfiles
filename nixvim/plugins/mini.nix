@@ -4,6 +4,7 @@
     mockDevIcons = true;
     modules = {
       ai.enable = true;
+      bufremove.enable = true;
       completion.enable = true;
       icons.enable = true;
       notify.enable = true;

@@ -30,6 +30,8 @@
     gp = "git push";
     "gp!" = "git push --force";
     gpl = "git pull";
+
+    tree = "tree --gitignore";
   };
 
   programs.starship = {
