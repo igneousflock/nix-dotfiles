@@ -155,9 +155,11 @@
     fd
     git
     gnumake
+    gparted
     htop
     nixfmt-rfc-style
     openssl
+    parted
     ripgrep
     unzip
     wget

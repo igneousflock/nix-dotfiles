@@ -40,6 +40,17 @@
     ];
   };
 
+  fileSystems."/mnt/hdd" = {
+    device = "/dev/disk/by-uuid/630cb307-7ae8-40f7-bc7e-651c1edb71b4";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/bigssd" = {
+    device = "/mnt/hdd";
+    fsType = "none";
+    options = [ "bind" ];
+  };
+
   swapDevices = [
     { device = "/dev/disk/by-uuid/00b900e9-a394-469b-b3e3-7fcc5b1346d5"; }
   ];
