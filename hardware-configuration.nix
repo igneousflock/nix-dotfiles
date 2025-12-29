@@ -46,9 +46,27 @@
   };
 
   fileSystems."/mnt/bigssd" = {
-    device = "/mnt/hdd";
+    device = "/dev/nvme0n1p1";
+  };
+
+  fileSystems."/home/igneous/hdd" = {
+    depends = [ "/mnt/hdd" ];
+    device = "/mnt/hdd/igneous";
     fsType = "none";
-    options = [ "bind" ];
+    options = [
+      "bind"
+      "nofail"
+    ];
+  };
+
+  fileSystems."/home/igneous/ssd" = {
+    depends = [ "/mnt/hdd" ];
+    device = "/mnt/bigssd/igneous";
+    fsType = "none";
+    options = [
+      "bind"
+      "nofail"
+    ];
   };
 
   swapDevices = [
