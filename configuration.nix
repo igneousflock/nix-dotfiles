@@ -148,7 +148,6 @@
     gparted
     htop
     nixfmt-rfc-style
-    openssl
     parted
     pavucontrol
     ripgrep
