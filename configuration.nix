@@ -141,6 +141,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    chromium
     clang
     fd
     git
@@ -183,6 +184,7 @@
     builtins.elem (pkgs.lib.getName pkg) [
       "1password"
       "1password-cli"
+      "chromium"
       "steam"
       "steam-original"
       "steam-unwrapped"
