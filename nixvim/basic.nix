@@ -49,10 +49,5 @@
     inccommand = "split";
 
     confirm = true;
-
-    # Directory listing
-    # netrw_liststyle = 3;
-    # netrw_banner = 0;
-    # netrw_winsize = 25;
   };
 }
