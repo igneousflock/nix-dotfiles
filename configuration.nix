@@ -149,7 +149,7 @@
     gnumake
     gparted
     htop
-    nixfmt-rfc-style
+    nixfmt
     parted
     pavucontrol
     ripgrep
