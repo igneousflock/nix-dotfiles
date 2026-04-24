@@ -86,7 +86,8 @@
     # Enable the settings menu via `nvidia-settings`
     nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Use legacy driver for GTX 1070
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   # Enable CUPS to print documents.
