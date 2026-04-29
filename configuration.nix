@@ -112,6 +112,7 @@
     description = "joan";
     shell = pkgs.zsh;
     extraGroups = [
+      "dialout"
       "networkmanager"
       "wheel"
     ];
