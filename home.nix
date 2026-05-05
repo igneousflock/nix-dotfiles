@@ -43,6 +43,7 @@
     dig
     glibcInfo
     hyprpaper
+    hyprshutdown
     imagemagick
     man-pages
     man-pages-posix

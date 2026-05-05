@@ -1,12 +1,12 @@
 { ... }:
 {
   imports = [
+    ./waybar
+
     ./cursor.nix
     ./hyprland.nix
     ./hyprpaper.nix
   ];
-
-  programs.waybar.enable = true;
 
   services.hyprlauncher = {
     enable = true;

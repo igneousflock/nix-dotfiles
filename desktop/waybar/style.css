@@ -1,0 +1,41 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: 'Berkeley Mono', 'Iosevka Nerd Font';
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: white;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.75);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+/* highlight active workspace */
+#workspaces button.active {
+    border-top: 3px solid #a3a3a3;
+    border-bottom: 3px solid #a3a3a3;
+
+}
+
+#clock {
+    background-color: #64727D;
+}
+

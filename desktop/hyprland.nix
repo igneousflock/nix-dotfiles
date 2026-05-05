@@ -16,7 +16,7 @@
 
       # autostart
       exec-once = [
-        "waybar &"
+        # "waybar &"
         "1password --silent &"
         "hyprpaper &"
       ];

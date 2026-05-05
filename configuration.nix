@@ -113,6 +113,7 @@
     shell = pkgs.zsh;
     extraGroups = [
       "dialout"
+      "input"
       "networkmanager"
       "wheel"
     ];
