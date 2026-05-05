@@ -181,8 +181,8 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        "$mainMod, mouse_up, workspace, e+1"
+        "$mainMod, mouse_down, workspace, e-1"
 
         # Enter resize mode
         "$mainMod SHIFT, R, submap, resize"
