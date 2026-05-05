@@ -50,6 +50,7 @@
     prismlauncher
     thunderbird
     tree
+    wl-clipboard
     zathura
   ];
 
@@ -93,11 +94,5 @@
   programs.nixvim = {
     enable = true;
     imports = [ ./nixvim ];
-  };
-
-  programs.waybar.enable = true;
-
-  programs.wofi = {
-    enable = true;
   };
 }
