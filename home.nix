@@ -42,6 +42,7 @@
     cargo-expand
     dig
     glibcInfo
+    hyprpaper
     imagemagick
     man-pages
     man-pages-posix

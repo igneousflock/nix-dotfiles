@@ -9,6 +9,7 @@
           path = "~/Pictures/nomo2.jpg";
         }
       ];
+      splash = false;
     };
   };
 }
