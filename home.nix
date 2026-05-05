@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -10,6 +9,7 @@
     ./shell
 
     ./git.nix
+    ./hyprland.nix
     ./kitty.nix
     ./ssh.nix
   ];
@@ -88,23 +88,6 @@
   };
 
   programs.discord.enable = true;
-
-  programs.hyprcursor-phinger.enable = true;
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "~/Pictures/nomo2.jpg" ];
-      wallpaper = [ "HDMI-A-2,~/Pictures/nomo2.jpg" ];
-    };
-  };
-
-  # Only applies to XWayland/GTK
-  home.pointerCursor = {
-    name = "phinger-cursors-dark";
-    package = pkgs.phinger-cursors;
-    size = 24;
-    gtk.enable = true;
-  };
 
   programs.nixvim = {
     enable = true;
