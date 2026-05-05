@@ -6,10 +6,10 @@
 
 {
   imports = [
+    ./desktop
     ./shell
 
     ./git.nix
-    ./hyprland.nix
     ./kitty.nix
     ./ssh.nix
   ];
