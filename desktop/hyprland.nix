@@ -2,6 +2,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
+    systemd.enable = true;
 
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/

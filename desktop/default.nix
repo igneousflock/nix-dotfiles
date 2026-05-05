@@ -15,4 +15,7 @@
       general.grab_focus = true;
     };
   };
+
+  # use first portal implementation
+  xdg.portal.config.common.default = "*";
 }
