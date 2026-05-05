@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of igneous";
+  description = "System and home-manager configuration";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
