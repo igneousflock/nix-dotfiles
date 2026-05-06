@@ -45,6 +45,7 @@
     hyprpaper
     hyprshutdown
     imagemagick
+    jq
     man-pages
     man-pages-posix
     nixd
