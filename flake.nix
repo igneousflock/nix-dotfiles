@@ -18,10 +18,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
@@ -32,7 +28,6 @@
       hyprcursor-phinger,
       hyprland,
       nixvim,
-      rust-overlay,
       ...
     }:
     let
@@ -44,16 +39,7 @@
       nixosConfigurations = {
         flock = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            ./configuration.nix
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [ rust-overlay.overlays.default ];
-                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-              }
-            )
-          ];
+          modules = [ ./configuration.nix ];
           specialArgs = { inherit hyprland; };
         };
       };
