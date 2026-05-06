@@ -2,7 +2,7 @@
   description = "System and home-manager configuration";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
+    # unstable required as 25.11 is missing nvidia driver
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
