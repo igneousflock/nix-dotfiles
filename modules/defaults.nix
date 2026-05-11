@@ -1,15 +1,26 @@
 { lib, ... }:
+let
+  stateVersion = "25.05";
+in
 {
-  den.default.nixos.system.stateVersion = "25.11";
-  den.default.homeManager.home.stateVersion = "25.11";
+  den.default.nixos = {
+    system.stateVersion = stateVersion;
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+
+    # Enable networking
+    networking.networkmanager.enable = true;
+
+    # Set your time zone.
+    time.timeZone = "America/Chicago";
+
+    # Select internationalisation properties.
+    i18n.defaultLocale = "en_US.UTF-8";
+
+  };
+  den.default.homeManager.home.stateVersion = stateVersion;
 
   # enable hm by default
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
-
-  # User TODO: REMOVE THIS
-  den.aspects.igneous.nixos = {
-    boot.loader.grub.enable = false;
-    fileSystems."/".device = "/dev/fake";
-    fileSystems."/".fsType = "auto";
-  };
 }
