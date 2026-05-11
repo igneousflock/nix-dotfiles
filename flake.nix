@@ -18,11 +18,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    _1password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs =
-    inputs@{
+    {
       nixpkgs,
       home-manager,
       hyprcursor-phinger,
@@ -33,7 +32,6 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      op-shell = inputs._1password-shell-plugins;
     in
     {
       nixosConfigurations = {
@@ -52,7 +50,6 @@
           ./home.nix
           nixvim.homeModules.nixvim
           hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
-          op-shell.hmModules.default
         ];
 
         # Optionally use extraSpecialArgs

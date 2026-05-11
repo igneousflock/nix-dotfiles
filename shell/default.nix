@@ -41,8 +41,4 @@
     enable = true;
     enableZshIntegration = true;
   };
-
-  programs._1password-shell-plugins = {
-    enable = true;
-  };
 }
