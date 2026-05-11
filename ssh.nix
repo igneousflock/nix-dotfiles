@@ -8,6 +8,9 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
+    matchBlocks."15.204.234.43" = {
+      forwardAgent = true;
+    };
     matchBlocks."*" = {
       identityAgent = "~/.1password/agent.sock";
       forwardAgent = false;
