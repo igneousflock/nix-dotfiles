@@ -1,5 +1,7 @@
 { den, ... }:
 {
+  den.hosts.x86_64-linux.flock.users.igneous = { };
+
   # host aspect
   den.aspects.flock = {
     includes = [
