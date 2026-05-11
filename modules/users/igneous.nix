@@ -9,6 +9,8 @@
       den.aspects.git
       den.aspects.git.verification
 
+      den.aspects.hyprland
+
       den.aspects.shell
       den.aspects.shell.zsh
 
