@@ -5,10 +5,9 @@
     includes = [
       den.batteries.define-user
       den.batteries.primary-user
-      (den.batteries.user-shell "zsh")
 
       den.aspects.shell
-      den.aspects.zsh
+      den.aspects.shell.zsh
     ];
 
     homeManager =

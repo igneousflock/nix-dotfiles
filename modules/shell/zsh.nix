@@ -1,9 +1,14 @@
+{ den, ... }:
 let
   completions = builtins.readFile ./completions.zsh;
   keybindings = builtins.readFile ./keybindings.zsh;
 in
 {
-  den.aspects.zsh = {
+  den.aspects.shell.zsh = {
+    includes = [
+      (den.batteries.user-shell "zsh")
+    ];
+
     homeManager =
       { lib, pkgs, ... }:
       {
