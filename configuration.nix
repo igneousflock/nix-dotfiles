@@ -108,11 +108,9 @@
   programs.vim.enable = true;
 
   environment.systemPackages = with pkgs; [
-    chromium
     clang
     fd
     git
-    gnumake
     gparted
     htop
     nixfmt
