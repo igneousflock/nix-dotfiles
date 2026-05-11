@@ -30,6 +30,9 @@
     gp = "git push";
     "gp!" = "git push --force";
     gpl = "git pull";
+    gr = "git restore";
+    grs = "git restore --staged";
+    gs = "git status";
 
     tree = "tree --gitignore";
   };
