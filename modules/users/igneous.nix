@@ -8,6 +8,8 @@
 
       den.aspects.shell
       den.aspects.shell.zsh
+
+      den.aspects.nixvim
     ];
 
     homeManager =
