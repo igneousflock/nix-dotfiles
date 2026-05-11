@@ -100,9 +100,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -155,6 +152,9 @@
       "1password"
       "1password-cli"
       "chromium"
+      "nvidia-settings"
+      "nvidia-kernel-modules"
+      "nvidia-x11"
       "steam"
       "steam-original"
       "steam-unwrapped"
