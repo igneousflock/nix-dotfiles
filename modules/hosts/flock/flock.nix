@@ -20,9 +20,6 @@
         boot.kernelPackages = pkgs.linuxPackages_latest;
 
         environment.systemPackages = [ pkgs.hello ];
-
-        # Lets zsh completions work
-        environment.pathsToLink = [ "/share/zsh" ];
       };
   };
 }
