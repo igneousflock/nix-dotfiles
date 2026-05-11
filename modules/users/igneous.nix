@@ -6,6 +6,9 @@
       den.batteries.define-user
       den.batteries.primary-user
 
+      den.aspects.git
+      den.aspects.git.verification
+
       den.aspects.shell
       den.aspects.shell.zsh
 
