@@ -1,6 +1,11 @@
+{ den, ... }:
 {
   # host aspect
-  den.aspects.igloo = {
+  den.aspects.flock = {
+    includes = [
+      (den.batteries.hostname)
+    ];
+
     # host NixOS configuration
     nixos =
       { pkgs, ... }:

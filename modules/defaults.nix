@@ -1,4 +1,4 @@
-{ lib, den, ... }:
+{ lib, ... }:
 {
   den.default.nixos.system.stateVersion = "25.11";
   den.default.homeManager.home.stateVersion = "25.11";
@@ -7,7 +7,7 @@
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 
   # User TODO: REMOVE THIS
-  den.aspects.tux.nixos = {
+  den.aspects.igneous.nixos = {
     boot.loader.grub.enable = false;
     fileSystems."/".device = "/dev/fake";
     fileSystems."/".fsType = "auto";

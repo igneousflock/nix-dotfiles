@@ -1,11 +1,11 @@
 { den, ... }:
 {
   # user aspect
-  den.aspects.tux = {
+  den.aspects.igneous = {
     includes = [
       den.batteries.define-user
       den.batteries.primary-user
-      (den.batteries.user-shell "fish")
+      (den.batteries.user-shell "zsh")
     ];
 
     homeManager =
@@ -16,6 +16,6 @@
 
     # user can provide NixOS configurations
     # to any host it is included on
-    provides.to-hosts.nixos = { pkgs, ... }: { };
+    # provides.to-hosts.nixos = { pkgs, ... }: { };
   };
 }
