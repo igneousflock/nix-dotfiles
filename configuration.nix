@@ -108,18 +108,12 @@
   programs.vim.enable = true;
 
   environment.systemPackages = with pkgs; [
-    clang
     fd
     git
-    gparted
     htop
-    nixfmt
-    parted
     pavucontrol
     ripgrep
     unzip
-    usbutils
-    wget
   ];
 
   fonts.packages = with pkgs; [

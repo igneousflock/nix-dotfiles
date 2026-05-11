@@ -38,21 +38,17 @@
     ];
 
   home.packages = with pkgs; [
-    cargo-expand
-    dig
-    glibcInfo
     hyprpaper
     hyprshutdown
-    imagemagick
     jq
     man-pages
     man-pages-posix
     nixd
+    nixfmt
     prismlauncher
     thunderbird
     tree
     wl-clipboard
-    zathura
   ];
 
   xdg.mimeApps = {
