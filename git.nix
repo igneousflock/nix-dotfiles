@@ -39,4 +39,23 @@
       };
     };
   };
+
+  home.file = {
+    # To facilitate git signature verification
+    # SSH fingerprint comes from 1password
+    allowedSigners = {
+      target = ".config/git/allowedSigners";
+      text = ''
+        alex@avandesa.dev ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHJ9zhEHFJIpZ4qr6iu3Cqca3mquGCGyiIrcI0e3jXLZ
+      '';
+    };
+
+    "1passwordSshAgentConfig" = {
+      target = ".config/1Password/ssh/agent.toml";
+      text = ''
+        [[ssh-keys]]
+        vault = "Programming"
+      '';
+    };
+  };
 }
