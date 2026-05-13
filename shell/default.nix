@@ -34,6 +34,8 @@
     grs = "git restore --staged";
     gs = "git status";
 
+    nix-zsh = "nix-shell --command zsh";
+
     tree = "tree --gitignore";
   };
 
