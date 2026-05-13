@@ -29,7 +29,7 @@
       "hyprland/window" = {
         rewrite = {
           "(.*) — Mozilla Firefox" = "🌎 $1";
-          "(.*) - Discord" = "📱 $1";
+          "(.*) - Discord" = "💬 $1";
         };
         separate-outputs = true;
       };

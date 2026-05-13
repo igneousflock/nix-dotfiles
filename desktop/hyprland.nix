@@ -180,6 +180,10 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
+        # Switch to app-specific workspaces
+        "$mainMod SHIFT, D, workspace, discord"
+        "$mainMod SHIFT, S, workspace, steam"
+
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, e+1"
         "$mainMod, mouse_down, workspace, e-1"
@@ -224,6 +228,16 @@
           "match:fullscreen" = false;
           "match:pin" = false;
           no_focus = true;
+        }
+        {
+          name = "discord";
+          "match:class" = "discord";
+          workspace = "name:discord";
+        }
+        {
+          name = "steam";
+          "match:class" = "steam";
+          workspace = "name:steam";
         }
       ];
     };
