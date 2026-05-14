@@ -38,6 +38,8 @@ in
         enable = true;
         package = null;
         systemd.enable = true;
+        # TODO: migrate to lua (remove line, see warning)
+        configType = "hyprlang";
       };
     };
   };
