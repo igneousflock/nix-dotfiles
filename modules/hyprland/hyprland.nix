@@ -6,6 +6,8 @@ in
   den.aspects.hyprland = {
     includes = [
       den.aspects.kitty
+      den.aspects.zen
+      den.aspects.firefox
 
       den.aspects.hyprland.settings
     ];
