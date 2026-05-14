@@ -19,7 +19,19 @@
     homeManager =
       { pkgs, ... }:
       {
-        home.packages = [ pkgs.htop ];
+        home.packages = with pkgs; [
+          jq
+          man-pages
+          man-pages-posix
+          nixd
+          nixfmt
+          tree
+        ];
+
+        programs.bat = {
+          enable = true;
+          config.theme = "Catppuccin Frappe";
+        };
       };
 
     # user can provide NixOS configurations
