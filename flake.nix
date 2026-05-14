@@ -20,6 +20,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -29,6 +33,7 @@
       hyprcursor-phinger,
       hyprland,
       nixvim,
+      zen-browser,
       ...
     }:
     let
@@ -56,6 +61,7 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = { inherit zen-browser; };
       };
     };
 }

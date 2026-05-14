@@ -1,4 +1,5 @@
 {
+  zen-browser,
   pkgs,
   lib,
   ...
@@ -49,6 +50,7 @@
     thunderbird
     tree
     wl-clipboard
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   xdg.mimeApps = {
