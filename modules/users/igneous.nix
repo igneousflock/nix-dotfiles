@@ -6,15 +6,14 @@
       den.batteries.define-user
       den.batteries.primary-user
 
+      firefox
       git
       git.verification
-
       hyprland
-
+      nixvim
       shell
       shell.zsh
-
-      nixvim
+      zen
     ];
 
     homeManager =
