@@ -17,7 +17,7 @@
             host = inputs.self.nixosConfigurations.flock.config;
           in
           ''
-            export QEMU_OPTS="-m 8192"
+            export QEMU_OPTS="-m 8192 -smp 4"
             ${host.system.build.vm}/bin/run-${host.networking.hostName}-vm "$@"
           '';
       };
