@@ -2,19 +2,19 @@
 {
   # user aspect
   den.aspects.igneous = {
-    includes = [
+    includes = with den.aspects; [
       den.batteries.define-user
       den.batteries.primary-user
 
-      den.aspects.git
-      den.aspects.git.verification
+      git
+      git.verification
 
-      den.aspects.hyprland
+      hyprland
 
-      den.aspects.shell
-      den.aspects.shell.zsh
+      shell
+      shell.zsh
 
-      den.aspects.nixvim
+      nixvim
     ];
 
     homeManager =
