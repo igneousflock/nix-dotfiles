@@ -10,7 +10,7 @@
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
       "$terminal" = "kitty";
-      "$browser " = "firefox";
+      "$browser " = "zen";
       "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
