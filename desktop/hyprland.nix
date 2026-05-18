@@ -16,7 +16,6 @@
 
       # autostart
       exec-once = [
-        # "waybar &"
         "1password --silent &"
         "hyprpaper &"
       ];
@@ -140,7 +139,7 @@
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
-        "$mainMod, P, pseudo, # dwindle"
+        "$mainMod, P, fullscreen"
         "$mainMod, F, exec, $browser"
         "$mainMod, TAB, focuscurrentorlast"
 
@@ -181,8 +180,10 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Switch to app-specific workspaces
-        "$mainMod SHIFT, D, workspace, discord"
-        "$mainMod SHIFT, S, workspace, steam"
+        "$mainMod , D, workspace, discord"
+        "$mainMod SHIFT, D, movetoworkspace, discord"
+        "$mainMod , S, workspace, steam"
+        "$mainMod SHIFT, S, movetoworkspace, steam"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, e+1"
