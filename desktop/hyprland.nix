@@ -3,6 +3,7 @@
     enable = true;
     package = null;
     systemd.enable = true;
+    configType = "hyprlang";
 
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/

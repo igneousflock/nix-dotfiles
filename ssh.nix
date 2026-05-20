@@ -1,28 +1,24 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-{
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."15.204.234.43" = {
-      forwardAgent = true;
-    };
-    matchBlocks."*" = {
-      identityAgent = "~/.1password/agent.sock";
-      forwardAgent = false;
-      addKeysToAgent = "no";
-      compression = false;
-      serverAliveInterval = 0;
-      serverAliveCountMax = 3;
-      hashKnownHosts = false;
-      userKnownHostsFile = "~/.ssh/known_hosts";
-      controlMaster = "no";
-      controlPath = "~/.ssh/master-%r@%n:%p";
-      controlPersist = "no";
+    settings = {
+      "*" = {
+        addKeysToAgent = "no";
+        compression = false;
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
+        forwardAgent = false;
+        hashKnownHosts = false;
+        identityAgent = "~/.1password/agent.sock";
+        serverAliveCountMax = 3;
+        serverAliveInterval = 0;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+      };
+      "15.204.234.43" = {
+        forwardAgent = true;
+      };
     };
   };
 }
