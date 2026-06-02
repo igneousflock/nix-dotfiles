@@ -16,6 +16,9 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Enable container management
+  boot.enableContainers = true;
+
   networking.hostName = "flock"; # Define your hostname.
 
   # Enable networking
