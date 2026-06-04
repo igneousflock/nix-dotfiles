@@ -36,6 +36,7 @@
     builtins.elem (lib.getName pkg) [
       "1password"
       "discord"
+      "obsidian"
     ];
 
   home.packages = with pkgs; [
@@ -46,6 +47,7 @@
     man-pages-posix
     nixd
     nixfmt
+    obsidian
     prismlauncher
     thunderbird
     tree
