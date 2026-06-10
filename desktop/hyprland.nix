@@ -140,7 +140,6 @@
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
-        "$mainMod, P, fullscreen"
         "$mainMod, F, exec, $browser"
         "$mainMod, TAB, focuscurrentorlast"
 
@@ -185,6 +184,8 @@
         "$mainMod SHIFT, D, movetoworkspace, discord"
         "$mainMod , S, workspace, steam"
         "$mainMod SHIFT, S, movetoworkspace, steam"
+        "$mainMod , P, workspace, spotify"
+        "$mainMod SHIFT, P, movetoworkspace, spotify"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, e+1"
@@ -240,6 +241,11 @@
           name = "steam";
           "match:class" = "steam";
           workspace = "name:steam";
+        }
+        {
+          name = "spotify";
+          "match:class" = "Spotify";
+          workspace = "name:spotify";
         }
       ];
     };

@@ -37,6 +37,7 @@
       "1password"
       "discord"
       "obsidian"
+      "spotify"
     ];
 
   home.packages = with pkgs; [
@@ -49,6 +50,7 @@
     nixfmt
     obsidian
     prismlauncher
+    spotify
     thunderbird
     tree
     wl-clipboard
