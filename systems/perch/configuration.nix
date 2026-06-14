@@ -5,6 +5,9 @@
   ...
 }:
 {
+  # Firmware update service
+  services.fwupd.enable = true;
+
   imports = [
     ./hardware-configuration.nix
   ];
