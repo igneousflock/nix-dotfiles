@@ -41,6 +41,7 @@
     ];
 
   home.packages = with pkgs; [
+    brightnessctl
     hyprpaper
     hyprshutdown
     jq
