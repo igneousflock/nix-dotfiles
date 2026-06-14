@@ -43,9 +43,14 @@
       nixosConfigurations = {
         flock = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
+          modules = [ ./systems/flock/configuration.nix ];
           specialArgs = { inherit hyprland; };
         };
+	perch = nixpkgs.lib.nixosSystem {
+		inherit system;
+	modules = [ ./systems/perch/configuration.nix ];
+	specialArgs = { inherit hyprland; };
+	};
       };
       homeConfigurations."igneous" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
