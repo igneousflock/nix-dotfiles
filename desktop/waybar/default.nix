@@ -21,6 +21,7 @@
         "cpu"
         "memory"
         "temperature"
+        "battery"
         "clock"
         "tray"
         "custom/power"
@@ -92,6 +93,10 @@
           ""
           ""
         ];
+      };
+
+      battery = {
+        format = "{capacity}% {icon}";
       };
 
       clock = {
