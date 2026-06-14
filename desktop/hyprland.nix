@@ -131,6 +131,9 @@
         follow_mouse = 0;
       };
 
+      # Don't scale xwayland apps, fix for discord & steam
+      xwayland.force_zero_scaling = true;
+
       # keybindings, https://wiki.hypr.land/0.54.0/Configuring/Binds/
       bindu = [
         "$mainMod, return, exec, $terminal"
