@@ -1,5 +1,7 @@
 { den, ... }:
 {
+  flake.den = den;
+
   # user aspect
   den.aspects.igneous = {
     includes = with den.aspects; [
@@ -8,6 +10,7 @@
 
       _1password
       bat
+      git
       hyprland
       kitty
       nixvim
