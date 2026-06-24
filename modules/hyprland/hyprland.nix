@@ -1,7 +1,4 @@
-{ inputs, ... }:
-let
-  hyprland = inputs.hyprland;
-in
+{ den, inputs, ... }:
 {
   flake-file.inputs = {
     hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
@@ -9,14 +6,20 @@ in
   };
 
   den.aspects.hyprland = {
+    includes = with den.aspects; [ hyprland.waybar ];
+
     nixos = { pkgs, ... }: {
-      programs.hyprland = {
-        enable = true;
-        package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        xwayland.enable = true;
-        withUWSM = true;
-      };
+      programs.hyprland =
+        let
+          hyprland = inputs.hyprland;
+        in
+        {
+          enable = true;
+          package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+          portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+          xwayland.enable = true;
+          withUWSM = true;
+        };
 
       # Use cachix
       nix.settings = {
