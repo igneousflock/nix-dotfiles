@@ -8,9 +8,9 @@
       ];
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
-      # "$terminal" = "kitty";
+      "$terminal" = "kitty";
       # "$browser " = "zen";
-      # "$menu " = "hyprlauncher";
+      "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
       # autostart
@@ -140,7 +140,7 @@
         "$mainMod SHIFT, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
-        # "$mainMod, SPACE, exec, $menu"
+        "$mainMod, SPACE, exec, $menu"
         # "$mainMod, F, exec, $browser"
         "$mainMod, TAB, focuscurrentorlast"
 

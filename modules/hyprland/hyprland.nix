@@ -1,7 +1,6 @@
 { den, inputs, ... }:
 {
   flake-file.inputs = {
-    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
@@ -39,6 +38,14 @@
         package = null;
         systemd.enable = true;
         configType = "hyprlang";
+      };
+
+      services.hyprlauncher = {
+        enable = true;
+        settings = {
+          finders.desktop_icons = true;
+          general.grab_focus = true;
+        };
       };
     };
   };

@@ -14,7 +14,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprcursor-phinger.url = "github:jappie3/hyprcursor-phinger";
     hyprland.url = "github:hyprwm/Hyprland";
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";

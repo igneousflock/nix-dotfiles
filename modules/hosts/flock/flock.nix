@@ -1,9 +1,11 @@
 { den, ... }: {
   # host aspect
   den.aspects.flock = {
-    includes = [
+    includes = with den.aspects; [
       (den.batteries.hostname)
       (den.batteries.tty-autologin "igneous")
+
+      hyprland
     ];
 
     # host NixOS configuration

@@ -8,6 +8,7 @@
 
       bat
       hyprland
+      kitty
       nixvim
       shell
       shell.bash
