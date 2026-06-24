@@ -14,6 +14,7 @@
       kitty
       nixvim
       obsidian
+      prism
       shell
       shell.bash
       shell.zsh
