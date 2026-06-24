@@ -1,13 +1,11 @@
 {
   wayland.windowManager.hyprland = {
-    enable = true;
-    package = null;
-    systemd.enable = true;
-    configType = "hyprlang";
-
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/
-      monitor = [ "eDP-1, preferred, auto, auto, cm, auto" ];
+      monitor = [
+        # "HDMI-A-2, 2560x1440@144.00Hz, auto, auto, cm, auto"
+        # "eDP-1, preferred, auto, auto, cm, auto"
+      ];
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
       "$terminal" = "kitty";
@@ -15,10 +13,10 @@
       "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
-      # autostart
+      # TODO: use an autostart quirk
       exec-once = [
         "1password --silent &"
-        "hyprpaper &"
+        # "hyprpaper &"
       ];
 
       # environment variables https://wiki.hypr.land/0.54.0/Configuring/Environment-variables/

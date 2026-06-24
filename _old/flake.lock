@@ -33,21 +33,6 @@
         "type": "github"
       }
     },
-    "den": {
-      "locked": {
-        "lastModified": 1781621963,
-        "narHash": "sha256-8Mntz200pNVIF2l8twpdc4wvEFqzrlkICz2tvkfwz0s=",
-        "owner": "denful",
-        "repo": "den",
-        "rev": "5df0987658d6e44268abba953406480e9f066928",
-        "type": "github"
-      },
-      "original": {
-        "owner": "denful",
-        "repo": "den",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -64,42 +49,7 @@
         "type": "github"
       }
     },
-    "flake-file": {
-      "locked": {
-        "lastModified": 1781217157,
-        "narHash": "sha256-N3q/SP2Ropk336e9KSgLh7kpROY6P70dprYdbPIfd5c=",
-        "owner": "vic",
-        "repo": "flake-file",
-        "rev": "ce63eaf7ebfe04a176653f66385a7f0a36380cee",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vic",
-        "repo": "flake-file",
-        "type": "github"
-      }
-    },
     "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778716662,
-        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
           "nixvim",
@@ -191,6 +141,26 @@
         "type": "github"
       }
     },
+    "hyprcursor-phinger": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763845612,
+        "narHash": "sha256-78zH5GrYa35bEkzeVnl8uXFbZ/zsiSHayjxZlNt+Xe8=",
+        "owner": "jappie3",
+        "repo": "hyprcursor-phinger",
+        "rev": "1207a845501a28e0e00d4a8e935ee0c9cab30650",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jappie3",
+        "repo": "hyprcursor-phinger",
+        "type": "github"
+      }
+    },
     "hyprgraphics": {
       "inputs": {
         "hyprutils": [
@@ -237,11 +207,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1782315209,
-        "narHash": "sha256-xKpodJ++lnLqRpmcH5OSimuo874wmgm3rD85J3GDmUw=",
+        "lastModified": 1782070887,
+        "narHash": "sha256-rwKRD8h3bxVebEDNyoaPh+q0dqdqvrAE8+1T4Jo3xxs=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "87cd2a5f6697a5923c4f427e9b399d79a354a7b8",
+        "rev": "5a7078d20a14bb199ef9bb81faa4faeaf5e92117",
         "type": "github"
       },
       "original": {
@@ -481,18 +451,23 @@
         "type": "github"
       }
     },
-    "import-tree": {
+    "nixos-hardware": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1778781969,
-        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
-        "owner": "vic",
-        "repo": "import-tree",
-        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "lastModified": 1781168557,
+        "narHash": "sha256-LOnLQ2tpYF9gqIDDr3+j3DbpJJr/QCH6zPRT2GzEUOE=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "6358ff76821101c178e3ab4919a62799bfe3652e",
         "type": "github"
       },
       "original": {
-        "owner": "vic",
-        "repo": "import-tree",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -514,31 +489,48 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1782175435,
-        "narHash": "sha256-8d2wCNWKnd86GzKZvbuqqlS+HqMrheXkvRf0qGJ/oA0=",
-        "rev": "89570f24e97e614aa34aa9ab1c927b6578a43775",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1020805.89570f24e97e/nixexprs.tar.xz"
+        "lastModified": 1781577229,
+        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1781607440,
+        "narHash": "sha256-rxO+uc/KFbSJp+pgyXRuAX6QlG9hJdnt0BXpEQRXY+U=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3e41b24abd260e8f71dbe2f5737d24122f972158",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixvim": {
       "inputs": {
-        "flake-parts": "flake-parts_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs_3",
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1782254890,
-        "narHash": "sha256-kjsEECqhpPnJWqhooXp6tWh2qGQftCPAo2G1GvZtKdw=",
+        "lastModified": 1782176672,
+        "narHash": "sha256-8gNmp6mdko4/ALHsiewq4t/I3OvX4nbjAIoz5uyn1p4=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "dbf9550dba8448b03e11d58e5695d6c44a464554",
+        "rev": "91df3d9f91c2b6e4c07541903b9d7f80a5b857e1",
         "type": "github"
       },
       "original": {
@@ -572,12 +564,10 @@
     },
     "root": {
       "inputs": {
-        "den": "den",
-        "flake-file": "flake-file",
-        "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "hyprcursor-phinger": "hyprcursor-phinger",
         "hyprland": "hyprland",
-        "import-tree": "import-tree",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "zen-browser": "zen-browser"
