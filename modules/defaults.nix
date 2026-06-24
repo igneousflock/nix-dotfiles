@@ -19,7 +19,7 @@
 
     i18n.defaultLocale = "en_US.UTF-8";
 
-    environment.systemPackages = with pkgs; [ nh ];
+    environment.systemPackages = with pkgs; [ just nh ];
 
     nix.settings.experimental-features = [
       "nix-command"
