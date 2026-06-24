@@ -7,19 +7,11 @@
     ];
 
     # host NixOS configuration
-    nixos =
-      { pkgs, ... }:
-      {
-        imports = [ ./_hardware-configuration.nix ];
-        environment.systemPackages = [ pkgs.hello ];
-        boot.kernelPackages = pkgs.linuxPackages_latest;
-      };
+    nixos = {
+      imports = [ ./_hardware-configuration.nix ];
+    };
 
     # host provides default home environment for its users
-    provides.to-users.homeManager =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.vim ];
-      };
+    provides.to-users.homeManager = { };
   };
 }

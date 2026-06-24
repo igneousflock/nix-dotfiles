@@ -20,6 +20,13 @@
       zen
     ];
 
+    nixos = {
+      services.displayManager.autoLogin = {
+        enable = true;
+        user = "igneous";
+      };
+    };
+
     homeManager =
       { pkgs, ... }:
       {

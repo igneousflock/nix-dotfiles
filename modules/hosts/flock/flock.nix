@@ -6,16 +6,17 @@
       (den.batteries.tty-autologin "igneous")
 
       hyprland
+      nvidia
+      pipewire
+      polkit
+      sddm
     ];
 
     # host NixOS configuration
-    nixos =
-      { pkgs, ... }:
-      {
-        imports = [ ./_hardware-configuration.nix ];
-        system.stateVersion = "25.05";
-        boot.kernelPackages = pkgs.linuxPackages_latest;
-      };
+    nixos = {
+      imports = [ ./_hardware-configuration.nix ];
+      system.stateVersion = "25.05";
+    };
 
     # host provides default home environment for its users
     provides.to-users.homeManager =

@@ -1,0 +1,17 @@
+{
+  # Enable sound with pipewire.
+  den.aspects.pipewire = {
+    nixos = { pkgs, ... }: {
+      environment.systemPackages = [ pkgs.pavucontrol ];
+
+      services.pulseaudio.enable = false;
+      security.rtkit.enable = true;
+      services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+      };
+    };
+  };
+}
