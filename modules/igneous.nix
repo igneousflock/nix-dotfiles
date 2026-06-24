@@ -1,7 +1,5 @@
 { den, ... }:
 {
-  flake.den = den;
-
   # user aspect
   den.aspects.igneous = {
     includes = with den.aspects; [
