@@ -2,10 +2,14 @@
 {
   # user aspect
   den.aspects.igneous = {
-    includes = [
+    includes = with den.aspects; [
       den.batteries.define-user
       den.batteries.primary-user
-      (den.batteries.user-shell "zsh")
+
+      bat
+      shell
+      shell.bash
+      shell.zsh
     ];
 
     homeManager =
@@ -19,16 +23,11 @@
           nixfmt
           tree
         ];
-
-        programs.bat = {
-          enable = true;
-          config.theme = "Catppuccin Frappe";
-        };
       };
 
     # user can provide NixOS configurations
     # to any host it is included on
-    provides.to-hosts.nixos = { pkgs, ... }: {
+    provides.to-hosts.nixos = {
       environment.pathsToLink = [ "/share/zsh" ];
     };
   };
