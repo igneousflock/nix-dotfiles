@@ -5,7 +5,10 @@
   };
 
   den.aspects.hyprland = {
-    includes = with den.aspects; [ hyprland.waybar ];
+    includes = with den.aspects; [
+      hyprland.hyprpaper
+      hyprland.waybar
+    ];
 
     nixos = { pkgs, ... }: {
       programs.hyprland =
