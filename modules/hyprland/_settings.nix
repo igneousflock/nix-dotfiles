@@ -1,24 +1,22 @@
 {
   wayland.windowManager.hyprland = {
-    enable = true;
-    package = null;
-    systemd.enable = true;
-    configType = "hyprlang";
-
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/
-      monitor = [ "eDP-1, preferred, auto, auto, cm, auto" ];
+      monitor = [
+        # "HDMI-A-2, 2560x1440@144.00Hz, auto, auto, cm, auto"
+        # "eDP-1, preferred, auto, auto, cm, auto"
+      ];
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
-      "$terminal" = "kitty";
-      "$browser " = "zen";
-      "$menu " = "hyprlauncher";
+      # "$terminal" = "kitty";
+      # "$browser " = "zen";
+      # "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
       # autostart
       exec-once = [
-        "1password --silent &"
-        "hyprpaper &"
+        # "1password --silent &"
+        # "hyprpaper &"
       ];
 
       # environment variables https://wiki.hypr.land/0.54.0/Configuring/Environment-variables/
@@ -142,8 +140,8 @@
         "$mainMod SHIFT, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
-        "$mainMod, SPACE, exec, $menu"
-        "$mainMod, F, exec, $browser"
+        # "$mainMod, SPACE, exec, $menu"
+        # "$mainMod, F, exec, $browser"
         "$mainMod, TAB, focuscurrentorlast"
 
         # Move focus with mainMod + arrow keys
@@ -183,12 +181,12 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Switch to app-specific workspaces
-        "$mainMod , D, workspace, discord"
-        "$mainMod SHIFT, D, movetoworkspace, discord"
-        "$mainMod , S, workspace, steam"
-        "$mainMod SHIFT, S, movetoworkspace, steam"
-        "$mainMod , P, workspace, spotify"
-        "$mainMod SHIFT, P, movetoworkspace, spotify"
+        # "$mainMod , D, workspace, discord"
+        # "$mainMod SHIFT, D, movetoworkspace, discord"
+        # "$mainMod , S, workspace, steam"
+        # "$mainMod SHIFT, S, movetoworkspace, steam"
+        # "$mainMod , P, workspace, spotify"
+        # "$mainMod SHIFT, P, movetoworkspace, spotify"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, e+1"

@@ -7,6 +7,7 @@
       den.batteries.primary-user
 
       bat
+      hyprland
       nixvim
       shell
       shell.bash
