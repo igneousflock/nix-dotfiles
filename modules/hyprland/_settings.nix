@@ -9,7 +9,7 @@
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
       "$terminal" = "kitty";
-      # "$browser " = "zen";
+      "$browser " = "zen";
       "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
@@ -141,7 +141,7 @@
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
-        # "$mainMod, F, exec, $browser"
+        "$mainMod, F, exec, $browser"
         "$mainMod, TAB, focuscurrentorlast"
 
         # Move focus with mainMod + arrow keys

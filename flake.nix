@@ -18,5 +18,9 @@
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixvim.url = "github:nix-community/nixvim";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

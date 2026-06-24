@@ -17,6 +17,7 @@
       shell
       shell.bash
       shell.zsh
+      zen
     ];
 
     homeManager =
