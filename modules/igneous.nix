@@ -10,13 +10,17 @@
 
       _1password
       bat
+      discord
       git
       hyprland
       kitty
       nixvim
+      obsidian
       shell
       shell.bash
       shell.zsh
+      spotify
+      steam
       zen
     ];
 

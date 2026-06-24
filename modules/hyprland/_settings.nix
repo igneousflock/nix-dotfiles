@@ -181,12 +181,12 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Switch to app-specific workspaces
-        # "$mainMod , D, workspace, discord"
-        # "$mainMod SHIFT, D, movetoworkspace, discord"
-        # "$mainMod , S, workspace, steam"
-        # "$mainMod SHIFT, S, movetoworkspace, steam"
-        # "$mainMod , P, workspace, spotify"
-        # "$mainMod SHIFT, P, movetoworkspace, spotify"
+        "$mainMod , D, workspace, discord"
+        "$mainMod SHIFT, D, movetoworkspace, discord"
+        "$mainMod , S, workspace, steam"
+        "$mainMod SHIFT, S, movetoworkspace, steam"
+        "$mainMod , P, workspace, spotify"
+        "$mainMod SHIFT, P, movetoworkspace, spotify"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_up, workspace, e+1"
