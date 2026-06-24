@@ -23,6 +23,10 @@
         ];
       };
 
+      home.sessionVariables = {
+        EDITOR = "nvim";
+      };
+
       home.shellAliases = {
         vim = "nvim";
       };
