@@ -7,6 +7,7 @@
       den.batteries.primary-user
 
       bat
+      nixvim
       shell
       shell.bash
       shell.zsh
