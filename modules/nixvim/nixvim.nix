@@ -1,6 +1,7 @@
 { inputs, ... }: {
   flake-file.inputs.nixvim = {
     url = "github:nix-community/nixvim";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   den.aspects.nixvim = {
@@ -9,6 +10,8 @@
 
       programs.nixvim = {
         enable = true;
+        # surpress horrible noisy warning
+        nixpkgs.source = inputs.nixpkgs;
 
         imports = [
           ./_plugins
