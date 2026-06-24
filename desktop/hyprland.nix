@@ -7,7 +7,7 @@
 
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/
-      monitor = [ "HDMI-A-2, 2560x1440@144.00Hz, auto, auto, cm, auto" ];
+      monitor = [ "eDP-1, preferred, auto, auto, cm, auto" ];
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
       "$terminal" = "kitty";
@@ -131,6 +131,9 @@
         follow_mouse = 0;
       };
 
+      # Don't scale xwayland apps, fix for discord & steam
+      xwayland.force_zero_scaling = true;
+
       # keybindings, https://wiki.hypr.land/0.54.0/Configuring/Binds/
       bindu = [
         "$mainMod, return, exec, $terminal"
@@ -202,16 +205,20 @@
       ];
 
       bindel = [
-        # Laptop multimedia keys for volume and LCD brightness
+        # Volume control
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
+        # Backlight brightness
+        ",XF86MonBrightnessUp, exec, brightnessctl set 10%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl set 10%-"
+
         # Requires playerctl
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
+        # ", XF86AudioNext, exec, playerctl next"
+        # ", XF86AudioPause, exec, playerctl play-pause"
+        # ", XF86AudioPlay, exec, playerctl play-pause"
+        # ", XF86AudioPrev, exec, playerctl previous"
       ];
 
       windowrule = [

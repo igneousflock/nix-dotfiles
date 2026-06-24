@@ -16,6 +16,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
     };
@@ -31,6 +35,7 @@
       home-manager,
       hyprcursor-phinger,
       hyprland,
+      nixos-hardware,
       nixvim,
       zen-browser,
       ...
@@ -43,7 +48,15 @@
       nixosConfigurations = {
         flock = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
+          modules = [ ./systems/flock/configuration.nix ];
+          specialArgs = { inherit hyprland; };
+        };
+        perch = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./systems/perch/configuration.nix
+            nixos-hardware.nixosModules.framework-16-7040-amd
+          ];
           specialArgs = { inherit hyprland; };
         };
       };

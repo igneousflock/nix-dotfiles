@@ -10,8 +10,6 @@
       modules-left = [
         "hyprland/workspaces"
         "hyprland/submap"
-      ];
-      modules-center = [
         "hyprland/window"
       ];
       modules-right = [
@@ -21,6 +19,7 @@
         "cpu"
         "memory"
         "temperature"
+        "battery"
         "clock"
         "tray"
         "custom/power"
@@ -28,7 +27,7 @@
 
       "hyprland/window" = {
         rewrite = {
-          "(.*) — Mozilla Firefox" = "🌎 $1";
+          "(.*) — (Zen Browser|Mozilla Firefox)" = "🌎 $1";
           "(.*) - Discord" = "💬 $1";
         };
         separate-outputs = true;
@@ -92,6 +91,10 @@
           ""
           ""
         ];
+      };
+
+      battery = {
+        format = "{capacity}% {icon}";
       };
 
       clock = {
