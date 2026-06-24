@@ -1,0 +1,21 @@
+{ inputs, den, ... }:
+{
+  # USER TODO: remove this tty-autologin used for the VM
+  den.aspects.flock.includes = [ (den.batteries.tty-autologin "igneous") ];
+
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages.vm = pkgs.writeShellApplication {
+        name = "vm";
+        text =
+          let
+            host = inputs.self.nixosConfigurations.flock.config;
+          in
+          ''
+            export QEMU_OPTS="-m 8192 -smp 4"
+            ${host.system.build.vm}/bin/run-${host.networking.hostName}-vm "$@"
+          '';
+      };
+    };
+}
