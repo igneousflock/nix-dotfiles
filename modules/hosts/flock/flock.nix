@@ -21,7 +21,12 @@
     provides.to-users.homeManager =
       { pkgs, ... }:
       {
-        home.packages = [ pkgs.vim ];
+        home.packages = with pkgs; [
+          fd
+          htop
+          ripgrep
+          unzip
+        ];
       };
   };
 }

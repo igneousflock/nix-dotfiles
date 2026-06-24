@@ -13,9 +13,9 @@
       "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
-      # autostart
+      # TODO: use an autostart quirk
       exec-once = [
-        # "1password --silent &"
+        "1password --silent &"
         # "hyprpaper &"
       ];
 

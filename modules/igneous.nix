@@ -6,6 +6,7 @@
       den.batteries.define-user
       den.batteries.primary-user
 
+      _1password
       bat
       hyprland
       kitty
