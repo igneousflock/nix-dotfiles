@@ -1,4 +1,7 @@
 { den, ... }: {
+  # framework 16 laptop
+  den.hosts.x86_64-linux.perch.users.igneous = { };
+
   # host aspect
   den.aspects.perch = {
     includes = with den.aspects; [

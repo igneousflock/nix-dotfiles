@@ -1,4 +1,7 @@
 { den, ... }: {
+  # OVHcloud VPS
+  den.hosts.x86_64-linux.roost.users.catbird = { };
+
   den.aspects.roost = {
     includes = with den.aspects; [
       den.batteries.hostname
