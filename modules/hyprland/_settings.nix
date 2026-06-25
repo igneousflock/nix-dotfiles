@@ -3,8 +3,8 @@
     settings = {
       # monitor settings https://wiki.hypr.land/0.54.0/Configuring/Monitors/
       monitor = [
-        # "HDMI-A-2, 2560x1440@144.00Hz, auto, auto, cm, auto"
-        # "eDP-1, preferred, auto, auto, cm, auto"
+        "HDMI-A-2, 2560x1440@144.00Hz, auto, auto, cm, auto"
+        "eDP-1, preferred, auto, auto, cm, auto"
       ];
 
       # keywords https://wiki.hypr.land/0.54.0/Configuring/Keywords/
