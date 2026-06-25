@@ -37,7 +37,7 @@
     };
 
     homeManager = {
-      imports = [ ./_settings.nix ];
+      imports = [ ./_hyprland-settings.nix ];
 
       xdg.portal.config.common.default = "*";
 
