@@ -6,6 +6,7 @@ This repo uses the [`den`](https://den.denful.dev/) framework to organize the co
 
 - `flock` - Desktop PC
 - `perch` - Framework 16 Laptop
+- `roost` - OVHcloud VPS
 
 ## Usage
 
