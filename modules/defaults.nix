@@ -6,8 +6,6 @@
   den.schema.user.classes = lib.mkDefault [ "homeManager" ];
 
   den.default.nixos = { pkgs, ... }: {
-    system.stateVersion = "25.05";
-
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -19,7 +17,10 @@
 
     i18n.defaultLocale = "en_US.UTF-8";
 
-    environment.systemPackages = with pkgs; [ just nh ];
+    environment.systemPackages = with pkgs; [
+      just
+      nh
+    ];
 
     nix.settings.experimental-features = [
       "nix-command"

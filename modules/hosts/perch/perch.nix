@@ -15,6 +15,8 @@
     # host NixOS configuration
     nixos = {
       imports = [ ./_hardware-configuration.nix ];
+
+      system.stateVersion = "25.05";
     };
 
     # host provides default home environment for its users
