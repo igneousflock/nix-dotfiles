@@ -5,6 +5,8 @@
       (den.batteries.hostname)
       (den.batteries.tty-autologin "igneous")
 
+      efi
+
       bluetooth
       hyprland
       pipewire

@@ -1,7 +1,9 @@
 { den, ... }: {
   den.aspects.roost = {
-    includes = [
-      (den.batteries.hostname)
+    includes = with den.aspects; [
+      den.batteries.hostname
+
+      grub
     ];
 
     nixos = {
