@@ -2,6 +2,11 @@
 
 This repo uses the [`den`](https://den.denful.dev/) framework to organize the configurations for a few of my computers running [NixOS](https://nixos.org/).
 
+## Hosts
+
+- `flock` - Desktop PC
+- `perch` - Framework 16 Laptop
+
 ## Usage
 
 NOTE: if `just` isn't present for some reason, replace its invocations below with `nix run nixpkgs#just --`.
