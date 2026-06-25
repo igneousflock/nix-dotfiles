@@ -1,10 +1,20 @@
-{
+{ lib, ... }: {
+  # Use the GRUB 2 boot loader
   den.aspects.grub = {
-    nixos = {
-      # Use the GRUB 2 boot loader
-      boot.loader.grub.enable = true;
-      boot.loader.grub.efiSupport = true;
-      boot.loader.grub.efiInstallAsRemovable = true;
+    settings = {
+      device = lib.mkOption {
+        type = lib.types.str;
+        description = "The drive on which to install Grub";
+      };
+    };
+
+    nixos = { host, ... }: {
+      boot.loader.grub = {
+        enable = true;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = host.settings.grub.device;
+      };
     };
   };
 }
