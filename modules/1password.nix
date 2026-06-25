@@ -43,6 +43,9 @@
             serverAliveInterval = 0;
             userKnownHostsFile = "~/.ssh/known_hosts";
           };
+          "15.204.234.43" = {
+            forwardAgent = true;
+          };
         };
       };
 
