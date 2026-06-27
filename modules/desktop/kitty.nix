@@ -35,7 +35,7 @@
           "ctrl+right" = "neighboring_window right";
           "ctrl+down" = "neighboring_window down";
           "ctrl+left" = "neighboring_window left";
-          "ctrl+shfit+p" = "nth_window -1";
+          "ctrl+shift+p" = "nth_window -1";
           "ctrl+alt+t" = "detach_window new-tab";
         };
       };
