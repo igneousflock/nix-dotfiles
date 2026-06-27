@@ -1,4 +1,11 @@
-{ den, ... }: {
+{ den, inputs, ... }: {
+  flake-file.inputs = {
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   # framework 16 laptop
   den.hosts.x86_64-linux.perch.users.igneous = { };
 
@@ -19,7 +26,10 @@
 
     # host NixOS configuration
     nixos = {
-      imports = [ ./_hardware-configuration.nix ];
+      imports = [
+        ./_hardware-configuration.nix
+        inputs.nixos-hardware.nixosModules.framework-16-7040-amd
+      ];
 
       system.stateVersion = "25.05";
     };
