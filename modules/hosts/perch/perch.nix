@@ -25,13 +25,15 @@
     ];
 
     # host NixOS configuration
-    nixos = {
+    nixos = { pkgs, ... }: {
       imports = [
         ./_hardware-configuration.nix
         inputs.nixos-hardware.nixosModules.framework-16-7040-amd
       ];
 
       system.stateVersion = "25.05";
+
+      environment.systemPackages = with pkgs; [ brightnessctl ];
     };
 
     # host provides default home environment for its users
