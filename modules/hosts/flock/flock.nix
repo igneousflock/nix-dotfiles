@@ -11,6 +11,7 @@
       efi
 
       bluetooth
+      fonts
       hyprland
       nvidia
       pipewire

@@ -18,6 +18,7 @@
       efi
 
       bluetooth
+      fonts
       hyprland
       pipewire
       polkit

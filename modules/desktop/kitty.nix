@@ -7,7 +7,7 @@
 
         themeFile = "Catppuccin-Frappe";
         settings = {
-          # font_family = "family='Berkeley Mono' postscript_name=BerkeleyMono-Regular";
+          font_family = "family='Berkeley Mono' postscript_name=BerkeleyMono-Regular";
           cursor_trail = 1;
 
           scrollbar = "hovered";
