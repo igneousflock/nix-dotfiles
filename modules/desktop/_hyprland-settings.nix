@@ -13,12 +13,6 @@
       "$menu " = "hyprlauncher";
       "$mainMod" = "SUPER";
 
-      # TODO: use an autostart quirk
-      exec-once = [
-        "1password --silent &"
-        # "hyprpaper &"
-      ];
-
       # environment variables https://wiki.hypr.land/0.54.0/Configuring/Environment-variables/
       env = [
         "XCURSOR_SIZE,24"

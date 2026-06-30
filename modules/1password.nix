@@ -7,6 +7,10 @@
       ])
     ];
 
+    autostart.exec-once = [
+      "1password --silent &"
+    ];
+
     nixos = {
       programs._1password.enable = true;
       programs._1password-gui = {

@@ -1,7 +1,13 @@
 { den, inputs, ... }:
 {
+  flake.den = den;
+
   flake-file.inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
+  };
+
+  den.quirks.autostart = {
+    description = "Applications to start automatically in the desktop environment";
   };
 
   den.aspects.hyprland = {
@@ -36,25 +42,31 @@
       };
     };
 
-    homeManager = {
-      imports = [ ./_hyprland-settings.nix ];
+    homeManager =
+      { autostart, lib, ... }:
+      {
+        imports = [ ./_hyprland-settings.nix ];
 
-      xdg.portal.config.common.default = "*";
+        wayland.windowManager.hyprland.settings = {
+          exec-once = lib.concatMap (a: a.exec-once or [ ]) autostart;
+        };
 
-      wayland.windowManager.hyprland = {
-        enable = true;
-        package = null;
-        systemd.enable = true;
-        configType = "hyprlang";
-      };
+        xdg.portal.config.common.default = "*";
 
-      services.hyprlauncher = {
-        enable = true;
-        settings = {
-          finders.desktop_icons = true;
-          general.grab_focus = true;
+        wayland.windowManager.hyprland = {
+          enable = true;
+          package = null;
+          systemd.enable = true;
+          configType = "hyprlang";
+        };
+
+        services.hyprlauncher = {
+          enable = true;
+          settings = {
+            finders.desktop_icons = true;
+            general.grab_focus = true;
+          };
         };
       };
-    };
   };
 }
