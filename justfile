@@ -6,6 +6,9 @@ check:
 switch:
     nix run {{pkg}} -- switch
 
+test:
+    nix run {{pkg}} -- test
+
 vm:
     nix run .#vm
 

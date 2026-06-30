@@ -45,11 +45,9 @@
     homeManager =
       { autostart, lib, ... }:
       {
-        imports = [ ./_hyprland-settings.nix ];
-
-        wayland.windowManager.hyprland.settings = {
-          exec-once = lib.concatMap (a: a.exec-once or [ ]) autostart;
-        };
+        imports = [
+          ./_hyprland-lua.nix
+        ];
 
         xdg.portal.config.common.default = "*";
 
@@ -57,7 +55,29 @@
           enable = true;
           package = null;
           systemd.enable = true;
-          configType = "hyprlang";
+          configType = "lua";
+
+          extraLuaFiles = {
+            "animations" = {
+              content = ./hyprland-animations.lua;
+              autoLoad = true;
+            };
+            "binds" = {
+              content = ./hyprland-binds.lua;
+              autoLoad = true;
+            };
+          };
+
+          extraConfig =
+            let
+              all_autostart = lib.concatMap (a: a.exec-once or [ ]) autostart;
+              cmds = lib.strings.concatMapStringsSep "\n" (c: "hl.exec_cmd(\"${c}\")") all_autostart;
+            in
+            ''
+              hl.on("hyprland.start", function()
+                ${cmds}
+              end)
+            '';
         };
 
         services.hyprlauncher = {
