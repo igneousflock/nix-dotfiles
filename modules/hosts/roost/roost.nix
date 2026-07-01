@@ -7,6 +7,8 @@
       den.batteries.hostname
 
       grub
+      sops
+      sops.recipient
       tranquil
     ];
 

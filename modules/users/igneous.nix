@@ -19,6 +19,7 @@
       shell
       shell.bash
       shell.zsh
+      sops
       spotify
       steam
       zen

@@ -1,10 +1,11 @@
 { inputs, ... }: {
   flake-file.inputs.tranquil-pds = {
     url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   den.aspects.tranquil = {
-    nixos = {
+    nixos = { config, ... }: {
       imports = [ inputs.tranquil-pds.nixosModules.default ];
 
       services.tranquil-pds = {
@@ -14,7 +15,13 @@
           server.hostname = "pds.alexvds.com";
         };
 
-        environmentFiles = [ "/etc/secrets/tranquil.env.production" ];
+        environmentFiles = [ ];
+      };
+
+      sops.secrets = {
+        jwt_secret = { };
+        dpop_secret = { };
+        master_key = { };
       };
     };
   };
