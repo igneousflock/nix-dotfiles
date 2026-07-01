@@ -14,6 +14,17 @@
 
     i18n.defaultLocale = "en_US.UTF-8";
 
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 10d";
+    };
+
+    nix.optimise = {
+      automatic = true;
+      dates = "weekly";
+    };
+
     environment.systemPackages = with pkgs; [
       just
       nh
