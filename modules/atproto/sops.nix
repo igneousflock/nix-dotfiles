@@ -17,9 +17,9 @@
         imports = [ inputs.sops-nix.nixosModules.sops ];
 
         sops = {
-          defaultSopsFile = ./secrets/pds.yaml;
+          defaultSopsFile = ../../secrets/pds.yaml;
           age = {
-            sshKeyPaths = [ "/etc/ssh/ssh_host/ed25519_key" ];
+            sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
           };
         };
       };
