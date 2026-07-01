@@ -545,6 +545,19 @@
         "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1778672786,
+        "narHash": "sha256-Tf7q8/0aIwg4Btd/GUMNHXDTqlrWTr5o/vZ8euFUAQY=",
+        "rev": "eef00dfd8a712b34af845f9350bac681b1228bd1",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre997230.eef00dfd8a71/nixexprs.tar.xz?lastModified=1778672786&rev=eef00dfd8a712b34af845f9350bac681b1228bd1"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
+      }
+    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -601,6 +614,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "tranquil-pds": "tranquil-pds",
         "zen-browser": "zen-browser"
       }
     },
@@ -633,6 +647,24 @@
         "ref": "future-26.11",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tranquil-pds": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1782711090,
+        "narHash": "sha256-eIGDmhmqjpzxspXhd5qbMsTdBeVvpD67Fl80kgLtY6E=",
+        "ref": "refs/heads/main",
+        "rev": "6ec4484cadf60188a09726c697fc7ad221e275dc",
+        "revCount": 443,
+        "type": "git",
+        "url": "https://tangled.org/tranquil.farm/tranquil-pds"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://tangled.org/tranquil.farm/tranquil-pds"
       }
     },
     "xdph": {

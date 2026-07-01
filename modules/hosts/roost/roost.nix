@@ -7,6 +7,7 @@
       den.batteries.hostname
 
       grub
+      tranquil
     ];
 
     nixos = {
