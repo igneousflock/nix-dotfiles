@@ -18,10 +18,14 @@
         environmentFiles = [ ];
       };
 
-      sops.secrets = {
-        jwt_secret = { };
-        dpop_secret = { };
-        master_key = { };
+      sops = {
+        defaultSopsFile = ../../secrets/pds.yaml;
+        secrets = {
+          tranquil-pds = {
+            format = "dotenv";
+            key = "";
+          };
+        };
       };
     };
   };
