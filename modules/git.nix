@@ -32,5 +32,22 @@
         gs = "git status";
       };
     };
+
+    delta = {
+      homeManager = {
+        programs.delta = {
+          enable = true;
+          enableGitIntegration = true;
+
+          options = {
+            line-numbers = true;
+            line-numbers-left-style = "cyan";
+            line-numbers-right-style = "cyan";
+          };
+        };
+
+        home.sessionVariables.DELTA_PAGER = "less -R";
+      };
+    };
   };
 }

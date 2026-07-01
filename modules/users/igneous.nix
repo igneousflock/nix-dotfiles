@@ -10,6 +10,7 @@
       bat
       discord
       git
+      git.delta
       hyprland
       kitty
       nixvim
