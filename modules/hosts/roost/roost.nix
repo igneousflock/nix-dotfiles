@@ -9,7 +9,6 @@
       grub
       sops
       sops.recipient
-      tranquil
       sshd
     ];
 

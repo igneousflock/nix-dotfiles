@@ -1,29 +1,31 @@
 { inputs, ... }: {
   flake-file.inputs.tranquil-pds = {
     url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
-    inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.tranquil = {
+  den.aspects.tranquil = { user, ... }: {
     nixos = { config, ... }: {
       imports = [ inputs.tranquil-pds.nixosModules.default ];
 
       services.tranquil-pds = {
-        enable = false;
+        enable = true;
         database.createLocally = true;
         settings = {
           server.hostname = "pds.alexvds.com";
         };
 
-        environmentFiles = [ ];
+        environmentFiles = [ config.sops.secrets.tranquil-pds.path ];
       };
 
       sops = {
-        defaultSopsFile = ../../secrets/pds.yaml;
+        defaultSopsFile = ../../secrets/pds.env;
         secrets = {
           tranquil-pds = {
             format = "dotenv";
             key = "";
+
+            owner = user.name;
+            group = "wheel";
           };
         };
       };
