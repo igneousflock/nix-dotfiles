@@ -17,3 +17,6 @@ flake:
 
 update: flake
     nix flake update
+
+pds-secrets:
+    sops secrets/pds.env
