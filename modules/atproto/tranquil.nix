@@ -31,8 +31,6 @@ in
             smarthost = {
               host = "smtp.fastmail.com";
               port = "587";
-              username = "igneous_flock@fastmail.com";
-              # password in env
             };
           };
         };
