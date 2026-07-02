@@ -9,7 +9,7 @@ in
   };
 
   den.aspects.tranquil = { user, ... }: {
-    nixos = { config, ... }: {
+    nixos = { config, pkgs, ... }: {
       imports = [ inputs.tranquil-pds.nixosModules.default ];
 
       services.tranquil-pds = {
@@ -48,6 +48,10 @@ in
 
       services.caddy = {
         enable = true;
+        package = pkgs.caddy.withPlugins {
+          plugins = [ "github.com/caddy-dns/route53@v1.6.2" ];
+          hash = "sha256-F/jqR4iEsklJFycTjSaW8B/V3iTGqqGOzwYBUXxRKrc=";
+        };
 
         virtualHosts = {
           ${hostname} = {
