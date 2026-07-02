@@ -1,4 +1,9 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+let
+  hostname = "pds.alexvds.com";
+  email = "pds@alexvds.com";
+in
+{
   flake-file.inputs.tranquil-pds = {
     url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
   };
@@ -9,12 +14,14 @@
 
       services.tranquil-pds = {
         enable = true;
+
         database.createLocally = true;
+
         settings = {
           server = {
-            hostname = "pds.alexvds.com";
+            inherit hostname;
             age_assurance_override = true;
-            contact_email = "pds@alexvds.com";
+            contact_email = email;
             max_blob_size = 1024 * 1014 * 1; # 1 GiB
           };
         };
@@ -34,7 +41,7 @@
         enable = true;
 
         virtualHosts = {
-          "pds.alexvds.com" = {
+          ${hostname} = {
             # by default, tranquil runs on port 3000.
             # You can change this with the tranquil-pds.settings.server.port option in the service config.
             extraConfig = ''
