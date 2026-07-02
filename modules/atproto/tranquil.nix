@@ -24,6 +24,17 @@ in
             contact_email = email;
             max_blob_size = 1024 * 1014 * 1; # 1 GiB
           };
+
+          email = {
+            # from_address = email;
+
+            smarthost = {
+              host = "smtp.fastmail.com";
+              port = "587";
+              username = "igneous_flock@fastmail.com";
+              # password in env
+            };
+          };
         };
 
         environmentFiles = [ config.sops.secrets.tranquil-pds.path ];
