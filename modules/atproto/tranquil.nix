@@ -40,6 +40,7 @@ in
             };
           };
 
+          # Bring in secrets and smarthost credentials
           environmentFiles = [ secrets.tranquil-pds.path ];
         };
 
@@ -60,24 +61,29 @@ in
 
           virtualHosts = {
             ${hostname} = {
-              # by default, tranquil runs on port 3000.
-              # You can change this with the tranquil-pds.settings.server.port option in the service config.
               extraConfig = ''
                 reverse_proxy localhost:3000
               '';
             };
           };
         };
+        systemd.services.caddy.serviceConfig.EnvironmentFile = [ secrets.caddy.path ];
 
         sops = {
-          defaultSopsFile = ../../secrets/pds.env;
           secrets = {
             tranquil-pds = {
+              sopsFile = ../../secrets/pds.env;
               format = "dotenv";
               key = "";
 
               owner = user.name;
               group = "wheel";
+            };
+
+            caddy = {
+              sopsFile = ../../secrets/caddy.env;
+              format = "dotenv";
+              key = "";
             };
           };
         };
