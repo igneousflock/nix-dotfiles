@@ -63,6 +63,21 @@ in
             ${hostname} = {
               extraConfig = ''
                 reverse_proxy localhost:3000
+                tls {
+                  dns route53 {
+                    region "us-east-1"
+                  }
+                }
+              '';
+            };
+            "*.${hostname}" = {
+              extraConfig = ''
+                reverse_proxy localhost:3000
+                tls {
+                  dns route53 {
+                    region "us-east-1"
+                  }
+                }
               '';
             };
           };
