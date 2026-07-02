@@ -11,7 +11,12 @@
         enable = true;
         database.createLocally = true;
         settings = {
-          server.hostname = "pds.alexvds.com";
+          server = {
+            hostname = "pds.alexvds.com";
+            age_assurance_override = true;
+            contact_email = "me@alexvds.com";
+            max_blob_size = 1024 * 1014 * 1; # 1 GiB
+          };
         };
 
         environmentFiles = [ config.sops.secrets.tranquil-pds.path ];
