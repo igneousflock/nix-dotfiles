@@ -9,6 +9,7 @@
       _1password
       bat
       discord
+      docker
       git
       git.delta
       hyprland
