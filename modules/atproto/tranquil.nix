@@ -56,7 +56,7 @@ in
           enable = true;
           package = pkgs.caddy.withPlugins {
             plugins = [ "github.com/caddy-dns/route53@v1.6.2" ];
-            hash = "sha256-F/jqR4iEsklJFycTjSaW8B/V3iTGqqGOzwYBUXxRKrc=";
+            hash = "sha256-dxrfc6o6PBxRqMRUDpenHDctHUNQx4ZmAy9577RTTKg=";
           };
 
           virtualHosts = {
