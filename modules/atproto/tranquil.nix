@@ -9,69 +9,99 @@ in
   };
 
   den.aspects.tranquil = { user, ... }: {
-    nixos = { config, ... }: {
-      imports = [ inputs.tranquil-pds.nixosModules.default ];
+    nixos =
+      { config, pkgs, ... }:
+      let
+        secrets = config.sops.secrets;
+      in
+      {
+        imports = [ inputs.tranquil-pds.nixosModules.default ];
 
-      services.tranquil-pds = {
-        enable = true;
+        services.tranquil-pds = {
+          enable = true;
 
-        database.createLocally = true;
+          database.createLocally = true;
 
-        settings = {
-          server = {
-            inherit hostname;
-            age_assurance_override = true;
-            contact_email = email;
-            max_blob_size = 1024 * 1014 * 1; # 1 GiB
+          settings = {
+            server = {
+              inherit hostname;
+              age_assurance_override = true;
+              contact_email = email;
+              max_blob_size = 1024 * 1014 * 1; # 1 GiB
+            };
+
+            email = {
+              from_address = email;
+
+              smarthost = {
+                host = "smtp.fastmail.com";
+                port = 587;
+              };
+            };
           };
 
-          email = {
-            from_address = email;
+          # Bring in secrets and smarthost credentials
+          environmentFiles = [ secrets.tranquil-pds.path ];
+        };
 
-            smarthost = {
-              host = "smtp.fastmail.com";
-              port = 587;
+        networking.firewall = {
+          enable = true;
+          allowedTCPPorts = [
+            80
+            443
+          ];
+        };
+
+        services.caddy = {
+          enable = true;
+          package = pkgs.caddy.withPlugins {
+            plugins = [ "github.com/caddy-dns/route53@v1.6.2" ];
+            hash = "sha256-dxrfc6o6PBxRqMRUDpenHDctHUNQx4ZmAy9577RTTKg=";
+          };
+
+          virtualHosts = {
+            ${hostname} = {
+              extraConfig = ''
+                reverse_proxy localhost:3000
+                tls {
+                  dns route53 {
+                    region "us-east-1"
+                  }
+                }
+              '';
+            };
+            "*.${hostname}" = {
+              extraConfig = ''
+                reverse_proxy localhost:3000
+                tls {
+                  dns route53 {
+                    region "us-east-1"
+                  }
+                }
+              '';
             };
           };
         };
+        systemd.services.caddy.serviceConfig.EnvironmentFile = [ secrets.caddy.path ];
 
-        environmentFiles = [ config.sops.secrets.tranquil-pds.path ];
-      };
+        sops = {
+          secrets = {
+            tranquil-pds = {
+              sopsFile = ../../secrets/pds.env;
+              format = "dotenv";
+              key = "";
 
-      networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [
-          80
-          443
-        ];
-      };
+              owner = user.name;
+              group = "wheel";
+            };
 
-      services.caddy = {
-        enable = true;
-
-        virtualHosts = {
-          ${hostname} = {
-            # by default, tranquil runs on port 3000.
-            # You can change this with the tranquil-pds.settings.server.port option in the service config.
-            extraConfig = ''
-              reverse_proxy localhost:3000
-            '';
+            caddy = {
+              sopsFile = ../../secrets/caddy.env;
+              format = "dotenv";
+              key = "";
+            };
           };
         };
       };
-
-      sops = {
-        defaultSopsFile = ../../secrets/pds.env;
-        secrets = {
-          tranquil-pds = {
-            format = "dotenv";
-            key = "";
-
-            owner = user.name;
-            group = "wheel";
-          };
-        };
-      };
-    };
   };
 }
