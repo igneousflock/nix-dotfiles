@@ -26,11 +26,11 @@ in
           };
 
           email = {
-            # from_address = email;
+            from_address = email;
 
             smarthost = {
               host = "smtp.fastmail.com";
-              port = "587";
+              port = 587;
             };
           };
         };
