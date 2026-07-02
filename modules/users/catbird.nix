@@ -10,6 +10,8 @@
       shell
       shell.bash
       shell.zsh
+
+      tranquil
     ];
 
     homeManager =

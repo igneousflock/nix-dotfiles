@@ -545,6 +545,19 @@
         "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1782821651,
+        "narHash": "sha256-OBddwHNJ+qxOHaKih0bE2PXJeZHlzUC8WOHZrUcnFwY=",
+        "rev": "e52c192be9d7b2c4bd4aed326c8731b35f8bb75c",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1025128.e52c192be9d7/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
+      }
+    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -601,7 +614,29 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "sops-nix": "sops-nix",
+        "tranquil-pds": "tranquil-pds",
         "zen-browser": "zen-browser"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782165805,
+        "narHash": "sha256-478kKQBvK6SYTOdN2h9jhKJv94nbXRbFMfuL1WshErg=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "56b24064fdcaedca53553b1a6d607fd23b613a24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "systems": {
@@ -633,6 +668,24 @@
         "ref": "future-26.11",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tranquil-pds": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1782711090,
+        "narHash": "sha256-eIGDmhmqjpzxspXhd5qbMsTdBeVvpD67Fl80kgLtY6E=",
+        "ref": "refs/heads/main",
+        "rev": "6ec4484cadf60188a09726c697fc7ad221e275dc",
+        "revCount": 443,
+        "type": "git",
+        "url": "https://tangled.org/tranquil.farm/tranquil-pds"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://tangled.org/tranquil.farm/tranquil-pds"
       }
     },
     "xdph": {

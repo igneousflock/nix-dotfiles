@@ -7,6 +7,9 @@
       den.batteries.hostname
 
       grub
+      sops
+      sops.recipient
+      sshd
     ];
 
     nixos = {
@@ -22,10 +25,24 @@
       boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
       # todo: openssh aspect
-      services.openssh.enable = true;
       users.users.root.openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINjHG2fiK7Ip1YlPdH/eyT1qIrtOJlHUeMZ13GZvWyGI"
       ];
+
+      security.sudo = {
+        enable = true;
+        extraRules = [
+          {
+            commands = [
+              {
+                command = "ALL";
+                options = [ "NOPASSWD" ];
+              }
+            ];
+            groups = [ "wheel" ];
+          }
+        ];
+      };
     };
 
     provides.to-users.homeManager =
