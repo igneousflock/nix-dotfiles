@@ -1,13 +1,10 @@
 {
   den.aspects.docker = {
-    nixos = {
+    nixos = { user, ... }: {
       virtualisation.docker = {
         enable = true;
-        rootless = {
-          enable = true;
-          setSocketVariable = true;
-        };
       };
+      users.users.${user.name}.extraGroups = [ "docker" ];
     };
   };
 }
