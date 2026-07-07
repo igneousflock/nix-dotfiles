@@ -31,7 +31,7 @@ in
             };
 
             storage = {
-              backend = "filesystem";
+              backend = "s3";
               s3_bucket = "blob.pds.alexvds.com";
             };
 
