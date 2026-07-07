@@ -30,6 +30,11 @@ in
               max_blob_size = 1024 * 1014 * 1; # 1 GiB
             };
 
+            storage = {
+              backend = "filesystem";
+              s3_bucket = "blob.pds.alexvds.com";
+            };
+
             email = {
               from_address = email;
 
