@@ -18,5 +18,5 @@ flake:
 update: flake
     nix flake update
 
-pds-secrets:
-    sops secrets/pds.env
+secrets GROUP:
+    sops secrets/{{GROUP}}.env
