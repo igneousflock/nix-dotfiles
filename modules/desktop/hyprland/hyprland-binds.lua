@@ -39,13 +39,18 @@ end
 
 local appWorkspaces = {
     discord = "D",
-    steam = "S",
+    steam = "T",
     spotify = "P",
 }
 for app,key in pairs(appWorkspaces) do
     hl.bind("SUPER + " .. key,             hl.dsp.focus({ workspace = "name:"..app }), {description = "go to " .. app .. "'s workspace"})
     hl.bind("SUPER + SHIFT + " .. key,     hl.dsp.window.move({ workspace = "name:"..app  }), {description = "move window to " .. app .. "'s workspace"})
 end
+
+hl.bind("SUPER + S", hl.dsp.exec_cmd("grimblast copy area"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copy output"))
+hl.bind("SUPER + ALT + S", hl.dsp.exec_cmd("grimblast save area"))
+hl.bind("SUPER + ALT + SHIFT + S", hl.dsp.exec_cmd("grimblast save output"))
 
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }), { repeating = true })
 hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }), { repeating = true })

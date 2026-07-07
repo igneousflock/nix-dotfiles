@@ -43,11 +43,13 @@
     };
 
     homeManager =
-      { autostart, lib, ... }:
+      { autostart, lib, pkgs, ... }:
       {
         imports = [
           ./_hyprland-lua.nix
         ];
+
+        home.packages = with pkgs; [ grimblast ];
 
         xdg.portal.config.common.default = "*";
 
