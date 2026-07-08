@@ -2,6 +2,8 @@
 let
   hostname = "pds.alexvds.com";
   email = "pds@alexvds.com";
+
+  one_gib = 1024 * 1024 * 1024;
 in
 {
   flake-file.inputs.tranquil-pds = {
@@ -27,8 +29,12 @@ in
               inherit hostname;
               age_assurance_override = true;
               contact_email = email;
-              max_blob_size = 1024 * 1014 * 1; # 1 GiB
+              max_blob_size = one_gib; # 1 GiB
+
+              disable_account_verification_gate = true;
             };
+
+            import.max_size = one_gib * 4; # 4 GiB
 
             storage = {
               backend = "s3";
@@ -64,8 +70,8 @@ in
             hash = "sha256-dxrfc6o6PBxRqMRUDpenHDctHUNQx4ZmAy9577RTTKg=";
           };
 
-          virtualHosts = {
-            ${hostname} = {
+          virtualHosts =
+            let
               extraConfig = ''
                 reverse_proxy localhost:3000
                 tls {
@@ -73,19 +79,22 @@ in
                     region "us-east-1"
                   }
                 }
-              '';
-            };
-            "*.${hostname}" = {
-              extraConfig = ''
-                reverse_proxy localhost:3000
-                tls {
-                  dns route53 {
-                    region "us-east-1"
-                  }
+                request_body {
+                  max_size 1GiB
+                }
+                @importRepo {
+                  method POST
+                  path /xrpc/com.atproto.repo.importRepo
+                }
+                request_body @importRepo {
+                  max_size 1GiB
                 }
               '';
+            in
+            {
+              ${hostname} = { inherit extraConfig; };
+              "*.${hostname}" = { inherit extraConfig; };
             };
-          };
         };
         systemd.services.caddy.serviceConfig.EnvironmentFile = [ secrets.caddy.path ];
 
