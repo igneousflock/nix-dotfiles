@@ -1,7 +1,5 @@
 { den, inputs, ... }:
 {
-  flake.den = den;
-
   flake-file.inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -43,7 +41,12 @@
     };
 
     homeManager =
-      { autostart, lib, pkgs, ... }:
+      {
+        autostart,
+        lib,
+        pkgs,
+        ...
+      }:
       {
         imports = [
           ./_hyprland-lua.nix
