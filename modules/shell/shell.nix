@@ -3,6 +3,8 @@
     homeManager = {
       home.shellAliases = {
         nix-zsh = "nix-shell --command zsh";
+        ndz = "nix develop -c zsh";
+        ndv = "nix develop -c nvim";
         tree = "tree --gitignore";
       };
 
