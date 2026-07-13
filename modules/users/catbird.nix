@@ -11,7 +11,7 @@
       shell.bash
       shell.zsh
 
-      tranquil
+      tranquil.pds
     ];
 
     homeManager =

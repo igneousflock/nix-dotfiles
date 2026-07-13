@@ -10,7 +10,15 @@ in
     url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
   };
 
-  den.aspects.tranquil = { user, ... }: {
+  den.aspects.tranquil.local-dev = {
+    nixos = {
+      networking.hosts = {
+        "127.0.0.1" = [ "pds.test" ];
+      };
+    };
+  };
+
+  den.aspects.tranquil.pds = { user, ... }: {
     nixos =
       { config, pkgs, ... }:
       let
