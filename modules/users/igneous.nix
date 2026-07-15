@@ -13,6 +13,7 @@
       git
       git.delta
       hyprland
+      jj
       kitty
       nixvim
       obsidian
