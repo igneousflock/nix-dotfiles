@@ -10,6 +10,7 @@
       bat
       discord
       docker
+      flake-registries
       git
       git.delta
       hyprland
