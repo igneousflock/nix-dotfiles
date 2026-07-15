@@ -13,7 +13,7 @@ in
   den.aspects.tranquil.local-dev = {
     nixos = {
       networking.hosts = {
-        "127.0.0.1" = [ "pds.test" ];
+        "127.0.0.1" = [ "pds.test" "local-test.pds.test" "migration-target.pds.test" ];
       };
     };
   };
