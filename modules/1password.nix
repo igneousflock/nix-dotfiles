@@ -30,6 +30,18 @@
         commit.gpgsign = true;
       };
 
+      programs.jujutsu.settings = {
+        signing = {
+          behavior = "own";
+          backend = "ssh";
+          key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHJ9zhEHFJIpZ4qr6iu3Cqca3mquGCGyiIrcI0e3jXLZ";
+          backends.ssh = {
+            program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+            allowed-signers = ".config/git/allowedSigners";
+          };
+        };
+      };
+
       programs.ssh = {
         enable = true;
         enableDefaultConfig = false;
