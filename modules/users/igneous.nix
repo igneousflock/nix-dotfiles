@@ -7,6 +7,7 @@
       den.batteries.primary-user
 
       _1password
+      aws
       bat
       discord
       docker
