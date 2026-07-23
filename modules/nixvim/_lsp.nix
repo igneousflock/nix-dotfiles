@@ -10,6 +10,7 @@
 
   lsp.servers = {
     nixd.enable = true;
+    just.enable = true;
   };
 
   plugins.rustaceanvim = {
