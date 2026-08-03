@@ -27,6 +27,7 @@
       spotify
       steam
       zen
+      zoom
     ];
 
     nixos = {
