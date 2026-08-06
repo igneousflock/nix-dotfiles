@@ -1,10 +1,15 @@
-{
+{ den, ... }: {
   den.aspects.java = {
-    nixos = {
+    includes = [
+      (den.batteries.unfree [ "idea" ])
+    ];
+
+    nixos = { pkgs, ... }: {
       programs.nix-ld = {
         enable = true;
       };
 
+      environment.systemPackages = [ pkgs.jetbrains.idea ];
     };
 
     homeManager = {
