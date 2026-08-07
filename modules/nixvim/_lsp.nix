@@ -19,4 +19,8 @@
       standalone = false;
     };
   };
+  plugins.neotest = {
+    enable = true;
+    adapters.rust.enable = true;
+  };
 }

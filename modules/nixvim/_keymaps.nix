@@ -195,5 +195,48 @@ in
       key = "<leader>rZ";
       cmd = "RustAnalyzer config { checkOnSave = true }";
     })
+
+    # Neotest
+    (mkCmdKeymap {
+      desc = "[r]un nearest [t]est";
+      key = "<leader>tr";
+      cmd = "Neotest run";
+    })
+    (mkCmdKeymap {
+      desc = "[a]ttach to the nearest [t]est";
+      key = "<leader>ta";
+      cmd = "Neotest attach";
+    })
+    (mkCmdKeymap {
+      desc = "Jump to [n]ext test";
+      key = "<leader>tn";
+      cmd = "Neotest jump next";
+    })
+    (mkCmdKeymap {
+      desc = "Jump to previous test";
+      key = "<leader>tN";
+      cmd = "Neotest jump prev";
+    })
+
+    (mkCmdKeymap {
+      desc = "Toggle [t]est output [p]anel";
+      key = "<leader>tp";
+      cmd = "Neotest output-panel toggle";
+    })
+    (mkCmdKeymap {
+      desc = "Show [t]est [O]utput window";
+      key = "<leader>tO";
+      cmd = "Neotest output";
+    })
+    (mkCmdKeymap {
+      desc = "Toggle [t]est [s]ummary UI";
+      key = "<leader>ts";
+      cmd = "Neotest summary toggle";
+    })
+    (mkCmdKeymap {
+      desc = "[q]uit running [t]ests";
+      key = "<leader>tq";
+      cmd = "Neotest stop";
+    })
   ];
 }
