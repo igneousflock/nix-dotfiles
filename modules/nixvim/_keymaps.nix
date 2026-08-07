@@ -170,19 +170,30 @@ in
       rustCmd = "codeAction";
     })
     (mkRustKeymap {
-      desc = "Next Rust Diagnostic";
+      desc = "Open [d]ocs in browser";
+      mode = "v";
       key = "<leader>rd";
-      rustCmd = "renderDiagnostic";
+      rustCmd = "openDocs";
     })
     (mkRustKeymap {
-      desc = "Prev Rust Diagnostic";
-      key = "<leader>rD";
-      rustCmd = "renderDiagnostic";
+      desc = "Run flycheck (rust)";
+      key = "<leader>rc";
+      rustCmd = "flyCheck";
     })
     (mkRustKeymap {
-      desc = "Open Cargo.toml";
+      desc = "Clear flycheck (rust)";
       key = "<leader>rC";
-      rustCmd = "openCargo";
+      rustCmd = "flyCheck clear";
+    })
+    (mkCmdKeymap {
+      desc = "Disable check-on-save (rust)";
+      key = "<leader>rz";
+      cmd = "RustAnalyzer config { checkOnSave = false }";
+    })
+    (mkCmdKeymap {
+      desc = "Enable check-on-save (rust)";
+      key = "<leader>rZ";
+      cmd = "RustAnalyzer config { checkOnSave = true }";
     })
   ];
 }

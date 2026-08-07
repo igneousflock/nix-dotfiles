@@ -15,6 +15,8 @@
 
   plugins.rustaceanvim = {
     enable = true;
-    settings.standalone = false;
+    settings = {
+      standalone = false;
+    };
   };
 }
