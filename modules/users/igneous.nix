@@ -36,6 +36,8 @@
         enable = true;
         user = "igneous";
       };
+
+      users.users.igneous.extraGroups = [ "dialout" ];
     };
 
     homeManager =
