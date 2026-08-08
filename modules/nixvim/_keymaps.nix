@@ -63,6 +63,16 @@ in
       action = "<ESC>";
     }
     (mkCmdKeymap {
+      desc = "Save file";
+      key = "<leader>w";
+      cmd = "w";
+    })
+    (mkCmdKeymap {
+      desc = "Save all files";
+      key = "<leader>W";
+      cmd = "wa";
+    })
+    (mkCmdKeymap {
       desc = "Clear search highlights in normal mode";
       key = "<ESC>";
       cmd = "nohlsearch";
