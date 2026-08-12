@@ -12,6 +12,8 @@
     includes = with den.aspects; [
       hyprland.hyprpaper
       hyprland.waybar
+
+      dunst
     ];
 
     nixos = { pkgs, ... }: {
