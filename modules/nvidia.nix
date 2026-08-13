@@ -19,6 +19,8 @@
         # Required
         modesetting.enable = true;
 
+        powerManagement.enable = true;
+
         # Disable open-source kernel module, 1070 not compatible
         open = false;
 
