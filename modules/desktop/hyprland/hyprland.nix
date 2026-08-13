@@ -16,18 +16,14 @@
       dunst
     ];
 
-    nixos = { pkgs, ... }: {
-      programs.hyprland =
-        let
-          hyprland = inputs.hyprland;
-        in
-        {
-          enable = true;
-          package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-          xwayland.enable = true;
-          withUWSM = true;
-        };
+    nixos = { system, ... }: {
+      programs.hyprland = {
+        enable = true;
+        package = inputs.hyprland.packages.${system}.hyprland;
+        portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+        xwayland.enable = true;
+        withUWSM = false;
+      };
 
       # Use cachix
       nix.settings = {
@@ -59,11 +55,10 @@
           hyprshutdown
         ];
 
-        xdg.portal.config.common.default = "*";
-
         wayland.windowManager.hyprland = {
           enable = true;
           package = null;
+          portalPackage = null;
           systemd.enable = true;
           configType = "lua";
 
