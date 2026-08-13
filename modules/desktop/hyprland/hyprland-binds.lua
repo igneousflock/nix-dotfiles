@@ -10,6 +10,12 @@ hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "start
 hl.bind("SUPER + F", hl.dsp.exec_cmd("zen"), { description = "start zen browser" })
 hl.bind("SUPER + TAB", hl.dsp.focus({ last = true }), { description = "switch to the last active window"})
 
+hl.bind(
+    "SUPER + ALT + L",
+    hl.dsp.exec_cmd("hyprlock --quiet"),
+    { description = "lock screen" }
+)
+
 local directions = {
     left = "H",
     right = "L",

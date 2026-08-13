@@ -92,6 +92,18 @@
             general.grab_focus = true;
           };
         };
+
+        programs.hyprlock = {
+          enable = true;
+          settings = {
+            input-field = [
+              {
+                dots_center = true;
+                fade_on_empty = false;
+              }
+            ];
+          };
+        };
       };
   };
 }
