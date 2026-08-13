@@ -1,6 +1,8 @@
 { den, ... }: {
   # desktop pc
-  den.hosts.x86_64-linux.flock.users.igneous = { };
+  den.hosts.x86_64-linux.flock.users.igneous = {
+    includes = [ den.aspects.autologin ];
+  };
 
   # host aspect
   den.aspects.flock = {
