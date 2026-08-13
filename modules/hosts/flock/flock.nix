@@ -14,10 +14,10 @@
       bluetooth
       fonts
       hyprland
+      ly
       nvidia
       pipewire
       polkit
-      sddm
       tranquil.local-dev
     ];
 

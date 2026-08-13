@@ -20,9 +20,9 @@
       bluetooth
       fonts
       hyprland
+      ly
       pipewire
       polkit
-      sddm
     ];
 
     # host NixOS configuration
