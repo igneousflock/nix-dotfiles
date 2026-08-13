@@ -35,6 +35,11 @@
       system.stateVersion = "25.05";
 
       environment.systemPackages = with pkgs; [ brightnessctl ];
+
+      services.logind.settings.Login = {
+        HandleLidSwitch = "suspend";
+        HandlePowerKey = "suspend";
+      };
     };
 
     # host provides default home environment for its users
