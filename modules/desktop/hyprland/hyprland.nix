@@ -54,7 +54,10 @@
           ./_hyprland-lua.nix
         ];
 
-        home.packages = with pkgs; [ grimblast ];
+        home.packages = with pkgs; [
+          grimblast
+          hyprshutdown
+        ];
 
         xdg.portal.config.common.default = "*";
 
