@@ -1,8 +1,6 @@
 { den, ... }: {
   # desktop pc
-  den.hosts.x86_64-linux.flock.users.igneous = {
-    includes = [ den.aspects.autologin ];
-  };
+  den.hosts.x86_64-linux.flock.users.igneous = { };
 
   # host aspect
   den.aspects.flock = {
@@ -12,6 +10,7 @@
 
       efi
 
+      autologin
       bluetooth
       fonts
       hyprland
