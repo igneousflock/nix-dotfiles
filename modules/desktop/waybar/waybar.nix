@@ -114,6 +114,7 @@
             menu = "on-click";
             menu-file = "$HOME/.config/waybar/power_menu.xml";
             menu-actions = {
+              suspend = "systemctl suspend";
               shutdown = "hyprshutdown --post-cmd 'shutdown -P 0'";
               reboot = "hyprshutdown --post-cmd 'reboot'";
             };
