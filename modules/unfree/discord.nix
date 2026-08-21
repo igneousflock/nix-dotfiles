@@ -1,7 +1,7 @@
 { den, ... }: {
   den.aspects.discord = {
     includes = [
-      (den.batteries.unfree [ "discord" ])
+      (den.batteries.unfree [ "discord" "discord-unwrapped" ])
     ];
 
     homeManager = {
