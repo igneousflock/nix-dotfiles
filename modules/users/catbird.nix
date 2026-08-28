@@ -6,6 +6,7 @@
       den.batteries.primary-user
 
       git
+      jj
       nixvim
       shell
       shell.bash
