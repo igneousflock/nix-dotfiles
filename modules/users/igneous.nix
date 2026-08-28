@@ -15,7 +15,6 @@
       git
       git.delta
       hyprland
-      java
       jj
       kitty
       nixvim
