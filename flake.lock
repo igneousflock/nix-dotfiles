@@ -653,11 +653,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1787312489,
-        "narHash": "sha256-HP7TOWrpX/VT33b3OPKenlcCjM5rBdgBKTuB2G7likI=",
+        "lastModified": 1787920607,
+        "narHash": "sha256-Vyx7nfIYJozk51QSS7Fszq64aFM9JcOC0YadC4NEGm8=",
         "ref": "refs/heads/main",
-        "rev": "479fa3ed222189394ad6f208e3bce0931cf9f111",
-        "revCount": 522,
+        "rev": "228c1bbbf528280ec68362732d3dd68ec9b1b6ee",
+        "revCount": 536,
         "type": "git",
         "url": "https://tangled.org/tranquil.farm/tranquil-pds"
       },
