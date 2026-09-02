@@ -14,6 +14,7 @@
       hyprland.waybar
 
       dunst
+      wofi
     ];
 
     nixos = { system, ... }: {
@@ -53,6 +54,7 @@
         home.packages = with pkgs; [
           grimblast
           hyprshutdown
+          wofi-emoji
         ];
 
         wayland.windowManager.hyprland = {
@@ -83,14 +85,6 @@
                 ${cmds}
               end)
             '';
-        };
-
-        services.hyprlauncher = {
-          enable = true;
-          settings = {
-            finders.desktop_icons = true;
-            general.grab_focus = true;
-          };
         };
 
         programs.hyprlock = {

@@ -6,7 +6,9 @@ hl.bind(
     { description = "quit hyprland" }
 )
 hl.bind("SUPER + V", hl.dsp.window.float({action = "toggle"}), { description = "toggle window floating state"})
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("hyprlauncher"), { description = "start hyprlauncher" })
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("wofi --show drun"), { description = "start wofi" })
+hl.bind("SUPER + SHIFT + SPACE", hl.dsp.exec_cmd("wofi --show run"), { description = "start wofi in PATH mode" })
+hl.bind("SUPER + ALT + SPACE", hl.dsp.exec_cmd("wofi-emoji"), { description = "start wofi emoji picker" })
 hl.bind("SUPER + F", hl.dsp.exec_cmd("zen"), { description = "start zen browser" })
 hl.bind("SUPER + TAB", hl.dsp.focus({ last = true }), { description = "switch to the last active window"})
 
