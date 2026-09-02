@@ -55,6 +55,7 @@
           grimblast
           hyprshutdown
           wofi-emoji
+          wl-clipboard
         ];
 
         wayland.windowManager.hyprland = {
