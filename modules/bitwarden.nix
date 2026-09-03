@@ -1,30 +1,29 @@
-{ den, ... }: {
-  den.aspects._1password = { user, ... }: {
-    includes = [
-      (den.batteries.unfree [
-        "1password"
-        "1password-cli"
-      ])
-    ];
-
-    autostart.exec-once = [
-      "1password --silent &"
-    ];
-
-    nixos = {
-      programs._1password.enable = true;
-      programs._1password-gui = {
-        enable = true;
-        polkitPolicyOwners = [ "${user.name}" ];
-      };
+{
+  den.aspects.bitwarden = {
+    nixos = { pkgs, ... }: {
+      environment.systemPackages = [
+        pkgs.bitwarden-desktop
+      ];
     };
 
-    homeManager = { pkgs, ... }: {
+    homeManager = {
+      sshAuthSock = {
+        enable = true;
+        initialization =
+          let
+            init = "export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock";
+          in
+          {
+            zsh = init;
+            bash = init;
+          };
+        systemd.socketProviderUnit = "ssh-agent.service";
+      };
+
       programs.git.settings = {
         # Sign commits with SSH via 1password
         gpg = {
           format = "ssh";
-          ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
           ssh.allowedSignersFile = "~/.config/git/allowedSigners";
         };
         commit.gpgsign = true;
@@ -36,7 +35,6 @@
           backend = "ssh";
           key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHJ9zhEHFJIpZ4qr6iu3Cqca3mquGCGyiIrcI0e3jXLZ";
           backends.ssh = {
-            program = "${pkgs._1password-gui}/bin/op-ssh-sign";
             allowed-signers = ".config/git/allowedSigners";
           };
         };
@@ -54,7 +52,7 @@
             controlPersist = "no";
             forwardAgent = false;
             hashKnownHosts = false;
-            identityAgent = "~/.1password/agent.sock";
+            identityAgent = "~/.bitwarden-ssh-agent.sock";
             serverAliveCountMax = 3;
             serverAliveInterval = 0;
             userKnownHostsFile = "~/.ssh/known_hosts";
@@ -73,14 +71,6 @@
           target = ".config/git/allowedSigners";
           text = ''
             alex@avandesa.dev ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHJ9zhEHFJIpZ4qr6iu3Cqca3mquGCGyiIrcI0e3jXLZ
-          '';
-        };
-
-        "1passwordSshAgentConfig" = {
-          target = ".config/1Password/ssh/agent.toml";
-          text = ''
-            [[ssh-keys]]
-            vault = "Programming"
           '';
         };
       };

@@ -6,9 +6,9 @@
       den.batteries.define-user
       den.batteries.primary-user
 
-      _1password
       aws
       bat
+      bitwarden
       discord
       docker
       flake-registries
