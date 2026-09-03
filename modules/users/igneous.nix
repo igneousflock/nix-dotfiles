@@ -18,7 +18,6 @@
       jj
       kitty
       nixvim
-      obsidian
       prism
       shell
       shell.bash
