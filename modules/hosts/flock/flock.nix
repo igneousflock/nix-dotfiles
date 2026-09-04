@@ -18,6 +18,7 @@
       nvidia
       pipewire
       polkit
+      printer
       tranquil.local-dev
     ];
 

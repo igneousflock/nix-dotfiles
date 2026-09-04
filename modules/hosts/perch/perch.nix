@@ -23,6 +23,7 @@
       ly
       pipewire
       polkit
+      printer
     ];
 
     # host NixOS configuration
