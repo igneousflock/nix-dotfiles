@@ -1,5 +1,7 @@
 {
   den.aspects.bitwarden = {
+    autostart.exec-once = [ "bitwarden &" ];
+
     nixos = { pkgs, ... }: {
       environment.systemPackages = [
         pkgs.bitwarden-desktop
@@ -21,7 +23,7 @@
       };
 
       programs.git.settings = {
-        # Sign commits with SSH via 1password
+        # Sign commits with SSH via bitwarden
         gpg = {
           format = "ssh";
           ssh.allowedSignersFile = "~/.config/git/allowedSigners";
@@ -66,7 +68,7 @@
 
       home.file = {
         # To facilitate git signature verification
-        # SSH fingerprint comes from 1password
+        # SSH fingerprint comes from bitwarden
         allowedSigners = {
           target = ".config/git/allowedSigners";
           text = ''
