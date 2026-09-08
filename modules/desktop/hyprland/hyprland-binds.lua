@@ -1,4 +1,4 @@
-hl.bind("SUPER + return", hl.dsp.exec_cmd("kitty"), { submap_universal = true, description = "open a terminal" })
+hl.bind("SUPER + return", hl.dsp.exec_cmd("ghostty"), { submap_universal = true, description = "open a terminal" })
 hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close(), { description = "close the current window" })
 hl.bind(
     "SUPER + M",

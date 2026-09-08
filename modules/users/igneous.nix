@@ -12,6 +12,7 @@
       discord
       docker
       flake-registries
+      ghostty
       git
       git.delta
       hyprland
