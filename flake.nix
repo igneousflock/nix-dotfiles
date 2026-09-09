@@ -31,7 +31,7 @@
     };
     tranquil-pds.url = "git+https://tangled.org/tranquil.farm/tranquil-pds";
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:youwen5/zen-browser-flake/pull/20/head";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
