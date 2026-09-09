@@ -1,5 +1,7 @@
-{
+{ den, ... }: {
   den.aspects.shell = {
+    includes = [ den.aspects.starship ];
+
     homeManager = {
       home.shellAliases = {
         j = "just";
@@ -7,12 +9,6 @@
         ndz = "nix develop -c zsh";
         ndv = "nix develop -c nvim";
         tree = "tree --gitignore";
-      };
-
-      programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-        enableBashIntegration = true;
       };
     };
   };
