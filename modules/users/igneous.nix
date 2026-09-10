@@ -15,6 +15,7 @@
       ghostty
       git
       git.delta
+      goat
       hyprland
       jj
       kitty
