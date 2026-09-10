@@ -3,8 +3,9 @@
     autostart.exec-once = [ "bitwarden &" ];
 
     nixos = { pkgs, ... }: {
-      environment.systemPackages = [
-        pkgs.bitwarden-desktop
+      environment.systemPackages = with pkgs; [
+        bitwarden-desktop
+        bitwarden-cli
       ];
     };
 
