@@ -32,7 +32,10 @@
     ];
 
     nixos = {
-      users.users.igneous.extraGroups = [ "dialout" ];
+      users.users.igneous.extraGroups = [
+        "dialout"
+        "input"
+      ];
     };
 
     homeManager =
