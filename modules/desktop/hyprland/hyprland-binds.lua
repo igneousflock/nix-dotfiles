@@ -10,6 +10,7 @@ hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("wofi --show drun"), { description = "s
 hl.bind("SUPER + SHIFT + SPACE", hl.dsp.exec_cmd("wofi --show run"), { description = "start wofi in PATH mode" })
 hl.bind("SUPER + ALT + SPACE", hl.dsp.exec_cmd("wofi-emoji"), { description = "start wofi emoji picker" })
 hl.bind("SUPER + F", hl.dsp.exec_cmd("zen"), { description = "start zen browser" })
+hl.bind("SUPER + SHIFT + F", hl.dsp.exec_cmd("zen --private-window"), { description = "start zen browser" })
 hl.bind("SUPER + TAB", hl.dsp.focus({ last = true }), { description = "switch to the last active window"})
 
 hl.bind(
