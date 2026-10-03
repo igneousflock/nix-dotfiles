@@ -27,6 +27,7 @@
       sops
       spotify
       steam
+      vpn
       zen
       zoom
     ];

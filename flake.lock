@@ -558,6 +558,21 @@
         "type": "github"
       }
     },
+    "nordvpn": {
+      "locked": {
+        "lastModified": 1778706114,
+        "narHash": "sha256-imvR+4kuwwGDepNrCeEldhiK8dsdzq7Bnebq4hwb2Jk=",
+        "owner": "morettimarco",
+        "repo": "nordvpn-nixos",
+        "rev": "0ecacc38e51147ab60082a692c8334cbbfae3ef5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "morettimarco",
+        "repo": "nordvpn-nixos",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -591,6 +606,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "nordvpn": "nordvpn",
         "sops-nix": "sops-nix",
         "tranquil-pds": "tranquil-pds",
         "zen-browser": "zen-browser"
