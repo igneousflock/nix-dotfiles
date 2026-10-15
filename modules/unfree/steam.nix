@@ -11,6 +11,7 @@
 
     nixos = {
       programs.steam.enable = true;
+      boot.kernelModules = [ "xpad" ];
     };
   };
 }
