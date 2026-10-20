@@ -13,7 +13,11 @@ in
   den.aspects.tranquil.local-dev = {
     nixos = {
       networking.hosts = {
-        "127.0.0.1" = [ "pds.test" "local-test.pds.test" "migration-target.pds.test" ];
+        "127.0.0.1" = [
+          "pds.test"
+          "local-test.pds.test"
+          "migration-target.pds.test"
+        ];
       };
     };
   };
@@ -75,7 +79,7 @@ in
           enable = true;
           package = pkgs.caddy.withPlugins {
             plugins = [ "github.com/caddy-dns/route53@v1.6.2" ];
-            hash = "sha256-/9c9b+S98V+eDj6mzb6KfAWWSBCrZoUzA1JDrMxuKQ0=";
+            hash = "sha256-Jb9aDXo46VCRSW299WenY6e9+FO4Xf+/UCEJqncsOjo=";
           };
 
           virtualHosts =
