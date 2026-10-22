@@ -13,7 +13,7 @@
       home.shellAliases =
         let
           eza = "eza --icons auto";
-          eza-long = "${eza} --long --git --time-style iso --mounts --total-size";
+          eza-long = "${eza} --long --git --time-style iso";
         in
         {
           ls = eza;
