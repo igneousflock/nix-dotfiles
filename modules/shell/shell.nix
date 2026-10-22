@@ -2,13 +2,13 @@
   den.aspects.shell = {
     includes = [ den.aspects.starship ];
 
-    homeManager = {
+    homeManager = { lib, ... }: {
       home.shellAliases = {
         j = "just";
         nix-zsh = "nix-shell --command zsh";
         ndz = "nix develop -c zsh";
         ndv = "nix develop -c nvim";
-        tree = "tree --gitignore";
+        tree = lib.mkDefault "tree --gitignore";
       };
     };
   };

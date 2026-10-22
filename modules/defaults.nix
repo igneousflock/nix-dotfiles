@@ -1,5 +1,7 @@
 { lib, den, ... }:
 {
+  den.default.includes = [ den.batteries.flake-scope ];
+
   den.default.homeManager.home.stateVersion = "26.05";
 
   # enable hm by default

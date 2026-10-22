@@ -11,6 +11,7 @@
       bitwarden
       discord
       docker
+      eza
       flake-registries
       ghostty
       git

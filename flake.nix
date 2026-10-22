@@ -5,6 +5,10 @@
 
   inputs = {
     den.url = "github:denful/den";
+    eza-themes = {
+      url = "github:eza-community/eza-themes";
+      flake = false;
+    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
